@@ -1,0 +1,1330 @@
+[
+ {
+  "key": "research",
+  "name": "Research & Innovation",
+  "desc": "Programmer og instrumenter der finansierer digital forskning og udvikling.",
+  "acts": [
+   {
+    "name": "Digital Europe Programme Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/694",
+      "celex": "32021R0694",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0694"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Horizon Europe Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/695",
+      "celex": "32021R0695",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0695"
+     },
+     {
+      "label": "Regulation (EU) 2021/764",
+      "celex": "32021R0764",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0764"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on a pilot regime for distributed ledger technology market infrastructures",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/858",
+      "celex": "32022R0858",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R0858"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   }
+  ]
+ },
+ {
+  "key": "industrial",
+  "name": "Industrial Policy",
+  "desc": "Industriel kapacitet: halvledere, HPC, råstoffer, digitale mål.",
+  "acts": [
+   {
+    "name": "Recovery and Resilience Facility Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/241",
+      "celex": "32021R0241",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0241"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "InvestEU Programme Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/523",
+      "celex": "32021R0523",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0523"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Connecting Europe Facility Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/1153",
+      "celex": "32021R1153",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R1153"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on the High Performance Computing Joint Undertaking",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/1173",
+      "celex": "32021R1173",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R1173"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on Joint Undertakings under Horizon Europe",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/2085",
+      "celex": "32021R2085",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R2085"
+     }
+    ],
+    "proc": "2022/0033(NLE)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0033(NLE)"
+   },
+   {
+    "name": "Decision on a path to the Digital Decade",
+    "type": "D",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Decision (EU) 2022/2481",
+      "celex": "32022D2481",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022D2481"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "European Chips Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0032(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0032(COD)"
+   },
+   {
+    "name": "European Critical Raw Materials Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0079(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0079(COD)"
+   },
+   {
+    "name": "Strategic Technologies for Europe Platform (STEP)",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0199(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0199(COD)"
+   }
+  ]
+ },
+ {
+  "key": "connectivity",
+  "name": "Connectivity",
+  "desc": "Frekvenser, bredbånd, elektronisk kommunikation, roaming, domæner.",
+  "acts": [
+   {
+    "name": "Frequency Bands Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 87/372/EEC",
+      "celex": "31987L0372",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:31987L0372"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Radio Spectrum Decision",
+    "type": "D",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Decision (EC) No 676/2002",
+      "celex": "32002D0676",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32002D0676"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Broadband Cost Reduction Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2014/61/EU",
+      "celex": "32014L0061",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32014L0061"
+     }
+    ],
+    "proc": "2023/0046(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0046(COD)"
+   },
+   {
+    "name": "Open Internet Access Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2015/2120",
+      "celex": "32015R2120",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32015R2120"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "European Electronic Communications Code Directive (EECC)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2018/1972",
+      "celex": "32018L1972",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32018L1972"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Roaming Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/612",
+      "celex": "32022R0612",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R0612"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on the Union Secure Connectivity Programme",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/588",
+      "celex": "32023R0588",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R0588"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": ".eu top-level domain Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2019/517",
+      "celex": "32019R0517",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019R0517"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "New radio spectrum policy programme (RSPP 2.0)",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Telecoms Act / Fair Share initiative",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   }
+  ]
+ },
+ {
+  "key": "data",
+  "name": "Data & Privacy",
+  "desc": "Persondata, ikke-personhenførbare data, dataadgang og interoperabilitet.",
+  "acts": [
+   {
+    "name": "General Data Protection Regulation (GDPR)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2016/679",
+      "celex": "32016R0679",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32016R0679"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on the protection of personal data processed by EU institutions, bodies, offices and agencies",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2018/1725",
+      "celex": "32018R1725",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32018R1725"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on the free flow of non-personal data",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2018/1807",
+      "celex": "32018R1807",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32018R1807"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Open Data Directive (PSI)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2019/1024",
+      "celex": "32019L1024",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019L1024"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Data Governance Act (DGA)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/868",
+      "celex": "32022R0868",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R0868"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "ePrivacy Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2017/0003(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2017/0003(COD)"
+   },
+   {
+    "name": "European Data Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0047(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0047(COD)"
+   },
+   {
+    "name": "European Health Data Space",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0140(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0140(COD)"
+   },
+   {
+    "name": "Regulation on data collection and sharing for short-term rental",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0358(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0358(COD)"
+   },
+   {
+    "name": "Harmonisation of GDPR enforcement",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0202(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0202(COD)"
+   },
+   {
+    "name": "Interoperable Europe Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0379(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0379(COD)"
+   },
+   {
+    "name": "Access to vehicle data, functions and resources",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "GreenData4All",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   }
+  ]
+ },
+ {
+  "key": "ipr",
+  "name": "IPR",
+  "desc": "Ophavsret til databaser, design, patenter og forretningshemmeligheder.",
+  "acts": [
+   {
+    "name": "Database Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 96/9/EC",
+      "celex": "31996L0009",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:31996L0009"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Community Design Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EC) No 6/2002",
+      "celex": "32002R0006",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32002R0006"
+     }
+    ],
+    "proc": "2022/0391(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0391(COD)"
+   },
+   {
+    "name": "Enforcement Directive (IPR)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2004/48/EC",
+      "celex": "32004L0048",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32004L0048"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Directive on the protection of trade secrets",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2016/943",
+      "celex": "32016L0943",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32016L0943"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Standard essential patents",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0133(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0133(COD)"
+   },
+   {
+    "name": "Design Directive",
+    "type": "L",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0392(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0392(COD)"
+   },
+   {
+    "name": "Compulsory licensing of patents",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0129(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0129(COD)"
+   }
+  ]
+ },
+ {
+  "key": "cyber",
+  "name": "Cybersecurity",
+  "desc": "Netværkssikkerhed, produktsikkerhed i software, beredskab.",
+  "acts": [
+   {
+    "name": "Cybersecurity Act",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2019/881",
+      "celex": "32019R0881",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019R0881"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation establishing the European Cybersecurity Competence Centre",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/887",
+      "celex": "32021R0887",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0887"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "NIS 2 Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2022/2555",
+      "celex": "32022L2555",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022L2555"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Information Security Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0084(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0084(COD)"
+   },
+   {
+    "name": "Cybersecurity Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0085(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0085(COD)"
+   },
+   {
+    "name": "Cyber Resilience Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0272(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0272(COD)"
+   },
+   {
+    "name": "Cyber Solidarity Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0109(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0109(COD)"
+   }
+  ]
+ },
+ {
+  "key": "law",
+  "name": "Law Enforcement",
+  "desc": "Retshåndhævelse, e-bevis, ulovligt indhold, betalingssvindel.",
+  "acts": [
+   {
+    "name": "Law Enforcement Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2016/680",
+      "celex": "32016L0680",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32016L0680"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Directive on combating fraud and counterfeiting of non-cash means of payment",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2019/713",
+      "celex": "32019L0713",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019L0713"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on addressing the dissemination of terrorist content online",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/784",
+      "celex": "32021R0784",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R0784"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Temporary CSAM Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2021/1232",
+      "celex": "32021R1232",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32021R1232"
+     }
+    ],
+    "proc": "2022/0155(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0155(COD)"
+   },
+   {
+    "name": "E-evidence Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2018/0108(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2018/0108(COD)"
+   },
+   {
+    "name": "Digitalisation of travel documents",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   }
+  ]
+ },
+ {
+  "key": "trust",
+  "name": "Trust & Safety",
+  "desc": "AI, produktansvar, produktsikkerhed, eID og digital tillid.",
+  "acts": [
+   {
+    "name": "Product Liability Directive (PLD)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 85/374/EEC",
+      "celex": "31985L0374",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:31985L0374"
+     }
+    ],
+    "proc": "2022/0302(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0302(COD)"
+   },
+   {
+    "name": "European Standardisation Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) No 1025/2012",
+      "celex": "32012R1025",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32012R1025"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Radio Equipment Directive (RED)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2014/53/EU",
+      "celex": "32014L0053",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32014L0053"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "eIDAS Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) No 910/2014",
+      "celex": "32014R0910",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32014R0910"
+     }
+    ],
+    "proc": "2021/0136(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0136(COD)"
+   },
+   {
+    "name": "Regulation establishing a Single Digital Gateway",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2018/1724",
+      "celex": "32018R1724",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32018R1724"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "General Product Safety Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/988",
+      "celex": "32023R0988",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R0988"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Machinery Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/1230",
+      "celex": "32023R1230",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R1230"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "AI Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2021/0106(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0106(COD)"
+   },
+   {
+    "name": "Eco-design Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0095(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0095(COD)"
+   },
+   {
+    "name": "AI Liability Directive",
+    "type": "L",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0303(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0303(COD)"
+   }
+  ]
+ },
+ {
+  "key": "ecom",
+  "name": "E-commerce & Consumer Protection",
+  "desc": "Onlinehandel, forbrugerrettigheder, platformsansvar, markedsføring.",
+  "acts": [
+   {
+    "name": "Unfair Contract Terms Directive (UCTD)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 93/13/EEC",
+      "celex": "31993L0013",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:31993L0013"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "E-commerce Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2000/31/EC",
+      "celex": "32000L0031",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32000L0031"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Unfair Commercial Practices Directive (UCPD)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2005/29/EC",
+      "celex": "32005L0029",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32005L0029"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Consumer Rights Directive (CRD)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2011/83/EU",
+      "celex": "32011L0083",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32011L0083"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "e-Invoicing Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2014/55/EU",
+      "celex": "32014L0055",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32014L0055"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Geo-blocking Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2018/302",
+      "celex": "32018R0302",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32018R0302"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Digital Content Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2019/770",
+      "celex": "32019L0770",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019L0770"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Directive on certain aspects concerning contracts for the sale of goods",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2019/771",
+      "celex": "32019L0771",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019L0771"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Digital Services Act (DSA)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/2065",
+      "celex": "32022R2065",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R2065"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Political Advertising Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2021/0381(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0381(COD)"
+   },
+   {
+    "name": "Right to Repair Directive",
+    "type": "L",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0083(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0083(COD)"
+   },
+   {
+    "name": "Multimodal digital mobility services (MDMS)",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Consumer protection: strengthened enforcement cooperation",
+    "type": "R",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Consumer rights: adapting ADR to digital markets",
+    "type": "L",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   }
+  ]
+ },
+ {
+  "key": "comp",
+  "name": "Competition",
+  "desc": "Konkurrenceregler, gatekeepers, markedsovervågning, platformsarbejde.",
+  "acts": [
+   {
+    "name": "Technology Transfer Block Exemption Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) No 316/2014",
+      "celex": "32014R0316",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32014R0316"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Company Law Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2017/1132",
+      "celex": "32017L1132",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32017L1132"
+     }
+    ],
+    "proc": "2023/0089(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0089(COD)"
+   },
+   {
+    "name": "Market Surveillance Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2019/1020",
+      "celex": "32019R1020",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019R1020"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Platform-to-Business Regulation (P2B)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2019/1150",
+      "celex": "32019R1150",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019R1150"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Vertical Block Exemption Regulation (VBER)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/720",
+      "celex": "32022R0720",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R0720"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Digital Markets Act (DMA)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/1925",
+      "celex": "32022R1925",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R1925"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Regulation on foreign subsidies distorting the internal market",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/2560",
+      "celex": "32022R2560",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R2560"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Horizontal Block Exemption Regulations (HBER)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/1066",
+      "celex": "32023R1066",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R1066"
+     },
+     {
+      "label": "Regulation (EU) 2023/1067",
+      "celex": "32023R1067",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R1067"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Platform Work Directive",
+    "type": "L",
+    "status": "neg",
+    "refs": [],
+    "proc": "2021/0414(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0414(COD)"
+   },
+   {
+    "name": "Single Market Emergency Instrument (SMEI)",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0278(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0278(COD)"
+   }
+  ]
+ },
+ {
+  "key": "media",
+  "name": "Media",
+  "desc": "Ophavsret, audiovisuelle tjenester, mediefrihed, portabilitet.",
+  "acts": [
+   {
+    "name": "Satellite and Cable I Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 93/83/EEC",
+      "celex": "31993L0083",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:31993L0083"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Information Society Directive (InfoSoc)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2001/29/EC",
+      "celex": "32001L0029",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32001L0029"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Audiovisual Media Services Directive (AVMSD)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2010/13/EU",
+      "celex": "32010L0013",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32010L0013"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Portability Regulation",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2017/1128",
+      "celex": "32017R1128",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32017R1128"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Satellite and Cable II Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2019/789",
+      "celex": "32019L0789",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019L0789"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Copyright Directive (DSM)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2019/790",
+      "celex": "32019L0790",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32019L0790"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "European Media Freedom Act",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2022/0277(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0277(COD)"
+   }
+  ]
+ },
+ {
+  "key": "finance",
+  "name": "Finance",
+  "desc": "Betalinger, kryptoaktiver, operationel modstandskraft, digital euro, moms.",
+  "acts": [
+   {
+    "name": "Common VAT system Directive",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive 2006/112/EC",
+      "celex": "32006L0112",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32006L0112"
+     }
+    ],
+    "proc": "2022/0407(CNS)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0407(CNS)"
+   },
+   {
+    "name": "Payment Services Directive 2 (PSD2)",
+    "type": "L",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Directive (EU) 2015/2366",
+      "celex": "32015L2366",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32015L2366"
+     }
+    ],
+    "proc": "2023/0209(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0209(COD)"
+   },
+   {
+    "name": "Digital Operational Resilience Act (DORA)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2022/2554",
+      "celex": "32022R2554",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32022R2554"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Markets in Crypto-Assets Regulation (MiCA)",
+    "type": "R",
+    "status": "law",
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/1114",
+      "celex": "32023R1114",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R1114"
+     }
+    ],
+    "proc": null,
+    "procUrl": null
+   },
+   {
+    "name": "Financial Data Access Regulation (FiDA)",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0205(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0205(COD)"
+   },
+   {
+    "name": "Digital euro Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0212(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0212(COD)"
+   },
+   {
+    "name": "Payment Services Regulation",
+    "type": "R",
+    "status": "neg",
+    "refs": [],
+    "proc": "2023/0210(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0210(COD)"
+   },
+   {
+    "name": "Revision of the Late Payments Directive",
+    "type": "L",
+    "status": "plan",
+    "refs": [],
+    "proc": null,
+    "procUrl": null
+   }
+  ]
+ }
+]

@@ -1,0 +1,369 @@
+<title>EU-lovgivning i den digitale sektor</title>
+<style>
+@font-face{
+  font-family:"Montserrat";
+  src:url(data:font/ttf;base64,__FONT__) format("truetype-variations");
+  font-weight:100 900; font-style:normal; font-display:swap;
+}
+
+:root{
+  /* Devoteam primær */
+  --dt-poppy:#f8485e;
+  --dt-grey:#3c3c3a;
+  --dt-white:#ffffff;
+  /* Devoteam sekundær — flader og former, aldrig tekst */
+  --dt-poppy-light:#fca2ae;
+  --dt-poppy-lighter:#fddade;
+  --dt-aqua:#d7ebe7;
+  --dt-beige:#efeadc;
+  --dt-lightgrey:#efeeee;
+
+  --fg-1:var(--dt-grey);
+  --fg-2:#6a6a67;
+  --fg-muted:#8b8b88;
+  --bg-page:var(--dt-white);
+  --bg-soft:var(--dt-lightgrey);
+  --bg-card:var(--dt-white);
+  --border-1:#e5e4e3;
+  --border-2:#d6d4d2;
+  --shadow-2:0 4px 12px rgba(60,60,58,.08), 0 2px 4px rgba(60,60,58,.04);
+  --shadow-3:0 12px 32px rgba(60,60,58,.12), 0 4px 8px rgba(60,60,58,.06);
+
+  --font:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --r-sm:8px; --r-md:12px; --r-lg:20px; --r-pill:999px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --fg-1:#f4f3f2; --fg-2:#c2c0be; --fg-muted:#96938f;
+    --bg-page:#232322; --bg-soft:#2c2c2a; --bg-card:#2c2c2a;
+    --border-1:#3f3f3c; --border-2:#4d4d49;
+    --dt-lightgrey:#33332f; --dt-poppy-lighter:#4a2b30; --dt-poppy-light:#7d3b46;
+    --shadow-2:0 4px 12px rgba(0,0,0,.4); --shadow-3:0 12px 32px rgba(0,0,0,.5);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --fg-1:#f4f3f2; --fg-2:#c2c0be; --fg-muted:#96938f;
+  --bg-page:#232322; --bg-soft:#2c2c2a; --bg-card:#2c2c2a;
+  --border-1:#3f3f3c; --border-2:#4d4d49;
+  --dt-lightgrey:#33332f; --dt-poppy-lighter:#4a2b30; --dt-poppy-light:#7d3b46;
+  --shadow-2:0 4px 12px rgba(0,0,0,.4); --shadow-3:0 12px 32px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --fg-1:#3c3c3a; --fg-2:#6a6a67; --fg-muted:#8b8b88;
+  --bg-page:#ffffff; --bg-soft:#efeeee; --bg-card:#ffffff;
+  --border-1:#e5e4e3; --border-2:#d6d4d2;
+  --dt-lightgrey:#efeeee; --dt-poppy-lighter:#fddade; --dt-poppy-light:#fca2ae;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg-page);color:var(--fg-1);
+     font-family:var(--font);font-size:16px;font-weight:400;line-height:1.55;
+     -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ── topbjælke med wordmark ─────────────────────────────── */
+.topbar{display:flex;align-items:center;justify-content:space-between;
+        padding:22px 0 0}
+.mark{display:inline-flex;align-items:baseline;font-weight:700;font-size:22px;
+      letter-spacing:-.02em;color:var(--fg-1);line-height:1}
+.mark i{display:inline-block;width:.18em;height:.18em;border-radius:50%;
+        background:var(--dt-poppy);margin-left:.05em;transform:translateY(-.34em)}
+.tag{font-size:12px;color:var(--fg-2);letter-spacing:.02em}
+
+/* ── masthead ───────────────────────────────────────────── */
+.masthead{padding:44px 0 34px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+         color:var(--dt-poppy);margin:0 0 16px}
+h1{font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.04;letter-spacing:-.025em;
+   margin:0 0 18px;max-width:20ch;text-wrap:balance}
+h1 em{font-style:normal;color:var(--dt-poppy)}
+.lead{font-size:19px;line-height:1.6;color:var(--fg-2);max-width:60ch;margin:0}
+
+.stats{display:flex;flex-wrap:wrap;gap:0 56px;margin-top:38px;
+       padding-top:26px;border-top:1px solid var(--border-1)}
+.stat b{display:block;font-size:38px;font-weight:700;letter-spacing:-.02em;
+        line-height:1.05;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+           color:var(--fg-2)}
+
+/* ── værktøjsbjælke ─────────────────────────────────────── */
+.toolbar{position:sticky;top:0;z-index:10;background:var(--bg-page);
+         border-bottom:1px solid var(--border-1);padding:14px 0;margin-top:34px}
+.toolbar .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.search{position:relative;flex:1 1 320px;min-width:240px}
+.search input{width:100%;padding:11px 14px 11px 40px;font:inherit;font-size:15px;
+              color:var(--fg-1);background:var(--bg-card);
+              border:1px solid var(--border-2);border-radius:var(--r-pill)}
+.search input::placeholder{color:var(--fg-muted)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--fg-2)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:13px;font-weight:500;padding:8px 15px;cursor:pointer;
+      border-radius:var(--r-pill);border:1px solid var(--border-2);
+      background:var(--bg-card);color:var(--fg-1)}
+.chip[aria-pressed="true"]{background:var(--dt-grey);border-color:var(--dt-grey);color:#fff}
+@media (prefers-color-scheme:dark){
+  .chip[aria-pressed="true"]{background:var(--dt-poppy);border-color:var(--dt-poppy);color:#fff}
+}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--dt-poppy);border-color:var(--dt-poppy);color:#fff}
+:root[data-theme="light"] .chip[aria-pressed="true"]{background:var(--dt-grey);border-color:var(--dt-grey);color:#fff}
+.chip:hover{border-color:var(--dt-poppy)}
+:where(a,button,input,summary):focus-visible{outline:2px solid var(--dt-poppy);outline-offset:2px}
+
+/* ── kategorigitter ─────────────────────────────────────── */
+main{padding:38px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:18px}
+.cat{display:flex;flex-direction:column;gap:14px;text-align:left;cursor:pointer;
+     background:var(--bg-card);border:1px solid var(--border-1);border-radius:var(--r-md);
+     padding:22px;font:inherit;color:var(--fg-1);transition:box-shadow .18s,border-color .18s}
+.cat:hover{box-shadow:var(--shadow-3);border-color:var(--border-2)}
+.cat-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.cat-title{display:block;font-size:19px;font-weight:600;line-height:1.25;letter-spacing:-.01em;margin:0;
+        max-width:16ch}
+.cat .n{font-size:30px;font-weight:700;line-height:1;letter-spacing:-.02em;
+        font-variant-numeric:tabular-nums;flex:none}
+.cat-desc{display:block;font-size:13.5px;line-height:1.5;color:var(--fg-2);margin:0;flex:1}
+.bar{display:flex;height:6px;border-radius:var(--r-pill);overflow:hidden;
+     background:var(--border-1)}
+.bar i{display:block;height:100%}
+.bar .b-law{background:var(--dt-grey)}
+.bar .b-neg{background:var(--dt-poppy)}
+.bar .b-plan{background:var(--dt-poppy-light)}
+@media (prefers-color-scheme:dark){.bar .b-law{background:#8f8d89}}
+:root[data-theme="dark"] .bar .b-law{background:#8f8d89}
+:root[data-theme="light"] .bar .b-law{background:var(--dt-grey)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 22px;padding:0;list-style:none;
+        font-size:13px;color:var(--fg-2)}
+.legend li{display:flex;align-items:center;gap:7px}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.dot.law{background:var(--dt-grey)}
+.dot.neg{background:var(--dt-poppy)}
+.dot.plan{background:var(--dt-poppy-light)}
+@media (prefers-color-scheme:dark){.dot.law{background:#8f8d89}}
+:root[data-theme="dark"] .dot.law{background:#8f8d89}
+:root[data-theme="light"] .dot.law{background:var(--dt-grey)}
+
+/* ── detaljevisning ─────────────────────────────────────── */
+.back{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:14px;
+      font-weight:500;background:none;border:0;padding:0;cursor:pointer;color:var(--dt-poppy)}
+.back:hover{text-decoration:underline}
+.detail-head{padding:8px 0 26px;border-bottom:1px solid var(--border-1);margin-bottom:26px}
+.detail-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.022em;
+                line-height:1.1;margin:18px 0 12px}
+.detail-head p{color:var(--fg-2);max-width:62ch;margin:0}
+
+.acts{display:flex;flex-direction:column;gap:0;list-style:none;margin:0;padding:0}
+.act{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 20px;align-items:start;
+     padding:18px 0;border-top:1px solid var(--border-1)}
+.act:first-child{border-top:0}
+.act h3{font-size:16.5px;font-weight:600;line-height:1.35;margin:0 0 8px;letter-spacing:-.005em}
+.refs{display:flex;flex-wrap:wrap;gap:8px}
+.ref{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;
+     padding:5px 11px;border-radius:var(--r-pill);text-decoration:none;
+     border:1px solid var(--border-2);color:var(--fg-1);background:var(--bg-card)}
+.ref:hover{border-color:var(--dt-poppy);color:var(--dt-poppy)}
+.ref .celex{color:var(--fg-muted);font-variant-numeric:tabular-nums}
+.ref.proc{border-style:dashed}
+.pill{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+      padding:5px 11px;border-radius:var(--r-pill);white-space:nowrap;flex:none;
+      border:1px solid transparent}
+.pill.law{background:var(--dt-lightgrey);color:var(--fg-1);border-color:var(--border-2)}
+.pill.neg{background:var(--dt-poppy-lighter);color:var(--fg-1);border-color:var(--dt-poppy-light)}
+.pill.plan{background:transparent;color:var(--fg-2);border-color:var(--border-2);border-style:dashed}
+.act .catname{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+              color:var(--dt-poppy);margin:0 0 6px}
+.empty{padding:56px 0;text-align:center;color:var(--fg-2)}
+
+footer{margin-top:72px;background:var(--dt-grey);color:#fff}
+footer .wrap{padding:40px 28px 46px}
+footer .mark{color:#fff}
+footer p{font-size:13px;line-height:1.6;color:rgba(255,255,255,.72);max-width:74ch;margin:14px 0 0}
+footer a{color:#fff}
+.hidden{display:none !important}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+@media (max-width:640px){
+  .act{grid-template-columns:1fr}
+  .stats{gap:0 32px}
+  .stat b{font-size:30px}
+}
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <span class="mark" aria-label="Devoteam">devoteam<i></i></span>
+    <span class="tag">AI-driven tech consulting</span>
+  </div>
+
+  <header class="masthead">
+    <p class="eyebrow">Regulatorisk overblik · EU</p>
+    <h1>EU-lovgivning i den <em>digitale sektor</em></h1>
+    <p class="lead">Alle retsakter, der regulerer teknologi i EU, samlet i tolv kategorier. Vælg en kategori for at se hver forordning, hvert direktiv og hver afgørelse med direkte link til den autoritative tekst i EUR-Lex.</p>
+    <div class="stats">
+      <div class="stat"><b id="s-total">–</b><span>Retsakter</span></div>
+      <div class="stat"><b id="s-cats">–</b><span>Kategorier</span></div>
+      <div class="stat"><b id="s-law">–</b><span>Gældende ret</span></div>
+      <div class="stat"><b id="s-neg">–</b><span>I forhandling</span></div>
+    </div>
+  </header>
+</div>
+
+<div class="toolbar">
+  <div class="wrap row">
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="6.9" cy="6.9" r="4.7" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input id="q" type="search" placeholder="Søg i alle retsakter — fx GDPR, NIS, 2022/2065" autocomplete="off" aria-label="Søg i retsakter">
+    </label>
+    <div class="chips" role="group" aria-label="Filtrér på status">
+      <button class="chip" type="button" data-status="law" aria-pressed="false">Gældende ret</button>
+      <button class="chip" type="button" data-status="neg" aria-pressed="false">I forhandling</button>
+      <button class="chip" type="button" data-status="plan" aria-pressed="false">Planlagt</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <main>
+    <ul class="legend">
+      <li><span class="dot law"></span>Gældende ret — offentliggjort i EU-Tidende</li>
+      <li><span class="dot neg"></span>I forhandling — forslag i lovgivningsprocessen</li>
+      <li><span class="dot plan"></span>Planlagt initiativ — varslet af Kommissionen</li>
+    </ul>
+    <div class="grid" id="grid"></div>
+    <div id="detail" class="hidden"></div>
+    <div id="results" class="hidden"></div>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="mark">devoteam<i></i></span>
+    <p id="foot"></p>
+  </div>
+</footer>
+
+<script>
+const DATA = __DATA__;
+const LABELS = {law:"Gældende ret", neg:"I forhandling", plan:"Planlagt"};
+const grid = document.getElementById('grid');
+const detail = document.getElementById('detail');
+const results = document.getElementById('results');
+const legend = document.querySelector('.legend');
+const qInput = document.getElementById('q');
+let status = null;
+
+const all = DATA.flatMap(c => c.acts.map(a => ({...a, cat: c.name, catKey: c.key})));
+const count = s => all.filter(a => a.status === s).length;
+document.getElementById('s-total').textContent = all.length;
+document.getElementById('s-cats').textContent = DATA.length;
+document.getElementById('s-law').textContent = count('law');
+document.getElementById('s-neg').textContent = count('neg');
+document.getElementById('foot').innerHTML =
+  'Kategoriinddelingen følger Bruegel og kaizenner.eu, <em>Overview of EU Legislation in the Digital Sector</em>. ' +
+  'Referencer og CELEX-numre er genereret ud fra retsakternes nummer og type — kontrollér et link, før det citeres. ' +
+  'Retsakter vedtaget efter 2024 er ikke med. Kilder: EUR-Lex og Europa-Parlamentets Legislative Observatory.';
+
+const esc = s => s.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+
+function refsHTML(a){
+  const parts = a.refs.map(r =>
+    `<a class="ref" href="${r.url}" target="_blank" rel="noopener">${esc(r.label)}<span class="celex">${r.celex}</span></a>`);
+  if (a.proc) parts.push(
+    `<a class="ref proc" href="${a.procUrl}" target="_blank" rel="noopener">${esc(a.proc)}</a>`);
+  return `<div class="refs">${parts.join('')}</div>`;
+}
+
+function actHTML(a, withCat){
+  return `<li class="act">
+    <div>
+      ${withCat ? `<p class="catname">${esc(a.cat)}</p>` : ''}
+      <h3>${esc(a.name)}</h3>
+      ${refsHTML(a)}
+    </div>
+    <span class="pill ${a.status}">${LABELS[a.status]}</span>
+  </li>`;
+}
+
+function renderGrid(){
+  grid.innerHTML = DATA.map(c => {
+    const n = {law:0, neg:0, plan:0};
+    c.acts.forEach(a => n[a.status]++);
+    const t = c.acts.length;
+    const seg = k => n[k] ? `<i class="b-${k}" style="width:${(n[k]/t*100).toFixed(1)}%"></i>` : '';
+    return `<button class="cat" type="button" data-cat="${c.key}">
+      <span class="cat-top"><span class="cat-title">${esc(c.name)}</span><span class="n">${t}</span></span>
+      <span class="cat-desc">${esc(c.desc)}</span>
+      <span class="bar">${seg('law')}${seg('neg')}${seg('plan')}</span>
+    </button>`;
+  }).join('');
+}
+
+function renderDetail(key){
+  const c = DATA.find(x => x.key === key);
+  if (!c) return show('grid');
+  const acts = status ? c.acts.filter(a => a.status === status) : c.acts;
+  detail.innerHTML = `<div class="detail-head">
+      <button class="back" type="button" id="back">← Alle kategorier</button>
+      <h2>${esc(c.name)}</h2>
+      <p>${esc(c.desc)}</p>
+    </div>
+    ${acts.length
+      ? `<ul class="acts">${acts.map(a => actHTML(a, false)).join('')}</ul>`
+      : `<p class="empty">Ingen retsakter med den valgte status i denne kategori.</p>`}`;
+  document.getElementById('back').addEventListener('click', () => { location.hash = ''; });
+  show('detail');
+}
+
+function renderSearch(q){
+  const needle = q.toLowerCase();
+  const hits = all.filter(a => {
+    if (status && a.status !== status) return false;
+    return (a.name + ' ' + a.cat + ' ' + (a.proc || '') + ' ' +
+            a.refs.map(r => r.label + ' ' + r.celex).join(' ')).toLowerCase().includes(needle);
+  });
+  results.innerHTML = hits.length
+    ? `<p class="eyebrow">${hits.length} ${hits.length === 1 ? 'retsakt' : 'retsakter'}</p>
+       <ul class="acts">${hits.map(a => actHTML(a, true)).join('')}</ul>`
+    : `<p class="empty">Ingen retsakter matcher “${esc(q)}”.</p>`;
+  show('results');
+}
+
+function show(which){
+  grid.classList.toggle('hidden', which !== 'grid');
+  legend.classList.toggle('hidden', which !== 'grid');
+  detail.classList.toggle('hidden', which !== 'detail');
+  results.classList.toggle('hidden', which !== 'results');
+}
+
+function route(){
+  const q = qInput.value.trim();
+  if (q) return renderSearch(q);
+  const key = location.hash.replace(/^#/, '');
+  if (key) return renderDetail(key);
+  show('grid');
+}
+
+grid.addEventListener('click', e => {
+  const b = e.target.closest('.cat');
+  if (b) location.hash = b.dataset.cat;
+});
+qInput.addEventListener('input', route);
+window.addEventListener('hashchange', route);
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const s = btn.dataset.status;
+    status = status === s ? null : s;
+    document.querySelectorAll('.chip').forEach(b =>
+      b.setAttribute('aria-pressed', String(b.dataset.status === status)));
+    route();
+  });
+});
+
+renderGrid();
+route();
+</script>
