@@ -54,6 +54,27 @@ def from_db():
     return data
 
 
+def _summary(s):
+    """Samme nøglerækkefølge som resten — se canonical()."""
+    if not s:
+        return None
+    return {
+        "subject": s["subject"],
+        "scope": s["scope"],
+        "duties": list(s["duties"]),
+        "timeline": [
+            {"date": t["date"], "label": t["label"], "note": t.get("note")}
+            for t in s["timeline"]
+        ],
+        "supervision": s["supervision"],
+        "sanctions": s["sanctions"],
+        "note": list(s["note"]),
+        "related": list(s["related"]),
+        "sources": [{"label": q["label"], "url": q["url"]} for q in s["sources"]],
+        "reviewed": str(s["reviewed"]),
+    }
+
+
 def canonical(data):
     """Fastlægger nøglerækkefølgen, så begge kilder giver byte-identisk output.
 
@@ -77,6 +98,7 @@ def canonical(data):
                     ],
                     "proc": a["proc"],
                     "procUrl": a["procUrl"],
+                    "summary": _summary(a.get("summary")),
                 }
                 for a in c["acts"]
             ],

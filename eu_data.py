@@ -97,7 +97,7 @@ ACTS = {
  dict(n="Regulation establishing a Single Digital Gateway", t="R", s="law", ref=[(2018,1724)]),
  dict(n="General Product Safety Regulation", t="R", s="law", ref=[(2023,988)]),
  dict(n="Machinery Regulation", t="R", s="law", ref=[(2023,1230)]),
- dict(n="AI Act", t="R", s="neg", proc="2021/0106(COD)"),
+ dict(n="AI Act", t="R", s="law", ref=[(2024,1689)], proc="2021/0106(COD)"),
  dict(n="Eco-design Regulation", t="R", s="neg", proc="2022/0095(COD)"),
  dict(n="AI Liability Directive", t="L", s="neg", proc="2022/0303(COD)"),
 ],
@@ -173,6 +173,8 @@ def label(t, year, num):
     return f"{word} ({suffix}) {year}/{num}"
 
 def build():
+    from eu_summaries import REVIEWED, SUMMARIES
+
     out = []
     for key, name, desc in CATS:
         items = []
@@ -181,9 +183,16 @@ def build():
                 {"label": label(a["t"], y, n), "celex": celex(a["t"], y, n), "url": eurlex_url(a["t"], y, n)}
                 for y, n in a.get("ref", [])
             ]
+            s = SUMMARIES.get((key, a["n"]))
             items.append({
                 "name": a["n"], "type": a["t"], "status": a["s"], "refs": refs,
                 "proc": a.get("proc"), "procUrl": oeil_url(a["proc"]) if a.get("proc") else None,
+                "summary": {
+                    "subject": s["subject"], "scope": s["scope"], "duties": s["duties"],
+                    "timeline": s["timeline"], "supervision": s["supervision_dk"],
+                    "sanctions": s["sanctions"], "note": s["consultant_note"],
+                    "related": s["related"], "sources": s["sources"], "reviewed": REVIEWED,
+                } if s else None,
             })
         out.append({"key": key, "name": name, "desc": desc, "acts": items})
     return out

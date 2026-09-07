@@ -8,11 +8,13 @@ navn) og referencer på (retsakt, rækkefølge) — der slettes ikke, så en ret
 der får FÆRRE numre end før, efterlader den overskydende reference. Ret den i
 SQL-editoren, hvis det sker.
 """
+import json
 import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from eu_data import ACTS, CATS  # noqa: E402
+from eu_summaries import REVIEWED, SUMMARIES  # noqa: E402
 from scripts.db import run  # noqa: E402
 
 
@@ -21,6 +23,21 @@ def lit(v):
     if v is None:
         return "null"
     return "'" + str(v).replace("'", "''") + "'"
+
+
+def arr(values):
+    """text[]-literal. Bygges som array[...] frem for '{...}', så teksten ikke
+    skal escapes to gange."""
+    if not values:
+        return "null"
+    return "array[" + ", ".join(lit(v) for v in values) + "]::text[]"
+
+
+def js(value):
+    """jsonb-literal."""
+    if value is None:
+        return "null"
+    return lit(json.dumps(value, ensure_ascii=False)) + "::jsonb"
 
 
 def main():
@@ -57,8 +74,27 @@ def main():
                     f"year = excluded.year, number = excluded.number;"
                 )
 
+    n_sum = 0
+    for (key, name), su in SUMMARIES.items():
+        n_sum += 1
+        stmts.append(
+            f"update acts set "
+            f"subject = {lit(su['subject'])}, "
+            f"scope = {lit(su['scope'])}, "
+            f"duties = {arr(su['duties'])}, "
+            f"timeline = {js(su['timeline'])}, "
+            f"supervision_dk = {lit(su['supervision_dk'])}, "
+            f"sanctions = {lit(su['sanctions'])}, "
+            f"consultant_note = {arr(su['consultant_note'])}, "
+            f"related = {arr(su['related'])}, "
+            f"sources = {js(su['sources'])}, "
+            f"summary_reviewed = {lit(REVIEWED)}::date "
+            f"where category_key = {lit(key)} and name = {lit(name)};"
+        )
+
     run("\n".join(stmts))
-    print(f"indlæst: {len(CATS)} kategorier, {n_acts} retsakter, {n_refs} referencer")
+    print(f"indlæst: {len(CATS)} kategorier, {n_acts} retsakter, "
+          f"{n_refs} referencer, {n_sum} opsummeringer")
 
 
 if __name__ == "__main__":

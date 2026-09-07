@@ -26,6 +26,7 @@ datasættet ligger inline. Den kan derfor lægges bag en vilkårlig statisk host
 | Fil | Rolle |
 |---|---|
 | `eu_data.py` | Datasættet — retsakter pr. kategori, plus CELEX- og URL-generatorerne |
+| `eu_summaries.py` | Konsulentopsummeringerne. Redaktionelt indhold, versionsstyret så det kan reviewes |
 | `eu-page-template.html` | Skabelonen med `__FONT__`- og `__DATA__`-pladsholdere |
 | `build.py` | Samler skabelon + data + font til `index.html` og `eu_digital_acts.json` |
 | `eu_digital_acts.json` | Genereret data alene — til import i en database |
@@ -34,6 +35,39 @@ datasættet ligger inline. Den kan derfor lægges bag en vilkårlig statisk host
 | `supabase/migrations/` | Skema, afledte funktioner, `acts_json`-udsigten og RLS |
 | `scripts/db.py` | Kører SQL mod Supabase via Management API'et |
 | `scripts/seed.py` | Lægger `eu_data.py` ind i databasen. Idempotent |
+
+## Opsummeringer
+
+En retsakt kan have en opsummering, som vises bag en **Opsummering**-knap på kortet.
+Retsakter med en opsummering får badget *Uddybet*; resten er rene referencer, og
+begge er gyldige tilstande — siden skal ikke se halvfærdig ud, fordi 100 retsakter
+ikke er skrevet.
+
+Indholdet forfattes i `eu_summaries.py` og lægges i databasen af `scripts/seed.py`.
+Koden er forfatterformatet, databasen er den kopi siden læses fra. Det er valgt
+fordi juridisk indhold skal kunne reviewes i en pull request, ikke rettes direkte
+i en tabel.
+
+Ni felter pr. opsummering:
+
+| Felt | Indhold |
+|---|---|
+| `subject` | Lovens genstand, 1–2 sætninger |
+| `scope` | Anvendelsesområde: hvem er omfattet, personelt og territorialt |
+| `duties` | Kernekrav med artikelhenvisning |
+| `timeline` | Vedtagelse, ikrafttræden og anvendelsesdatoer. Fremtidige datoer markeres på siden |
+| `supervision_dk` | Dansk tilsynsmyndighed |
+| `sanctions` | Bødeniveau |
+| `consultant_note` | Hvad det betyder for et tech-hus: leverancer, faldgruber, rolleskift |
+| `related` | Andre retsakter i datasættet. Bliver klikbare opslag |
+| `sources` | Links til de kilder, indholdet er kontrolleret mod |
+
+`summary_reviewed` sættes af `REVIEWED` i `eu_summaries.py` og vises som
+*Kontrolleret <dato>* nederst i panelet. Feltet er ikke pynt: AI-forordningens
+anvendelsesdatoer blev flyttet i juli 2026, og uden en kontroldato kan læseren
+ikke vurdere, om teksten stadig holder. Ret datoen, når indholdet er gennemgået.
+
+Skrevet indtil videre: GDPR og AI-forordningen.
 
 ## Database
 

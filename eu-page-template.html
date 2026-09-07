@@ -175,6 +175,48 @@ main{padding:38px 0 0}
 .pill.plan{background:transparent;color:var(--fg-2);border-color:var(--border-2);border-style:dashed}
 .act .catname{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
               color:var(--dt-poppy);margin:0 0 6px}
+
+/* ── opsummering ────────────────────────────────────────── */
+.brief-btn{display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:12.5px;
+           font-weight:600;padding:6px 13px;margin-top:10px;cursor:pointer;
+           border-radius:var(--r-pill);border:1px solid var(--dt-poppy);
+           background:transparent;color:var(--dt-poppy)}
+.brief-btn:hover{background:var(--dt-poppy);color:#fff}
+.brief-btn svg{transition:transform .18s}
+.brief-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.pills{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.badge-brief{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+             color:var(--dt-poppy);white-space:nowrap}
+.brief{grid-column:1/-1;margin:16px 0 4px;padding:24px;border-radius:var(--r-md);
+       background:var(--bg-soft);display:flex;flex-direction:column;gap:22px}
+.brief[hidden]{display:none}
+.brief h4{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+          color:var(--fg-2);margin:0 0 9px}
+.brief p{font-size:15px;line-height:1.62;margin:0;max-width:74ch}
+.brief ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.brief ul li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:9px;
+             font-size:14.5px;line-height:1.55;max-width:76ch}
+.brief ul li::before{content:"●";color:var(--dt-poppy);font-size:9px;line-height:1.9}
+.brief-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding:8px 0;
+       border-top:1px solid var(--border-1);font-size:14px;line-height:1.5}
+.tl li:first-child{border-top:0}
+.tl time{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tl b{font-weight:600}
+.tl span{display:block;color:var(--fg-2);font-size:13.5px;margin-top:2px}
+.tl li.now time,.tl li.now b{color:var(--dt-poppy)}
+.rel{display:flex;flex-wrap:wrap;gap:8px}
+.rel button{font:inherit;font-size:12.5px;padding:5px 12px;cursor:pointer;
+            border-radius:var(--r-pill);border:1px solid var(--border-2);
+            background:var(--bg-card);color:var(--fg-1)}
+.rel button:hover{border-color:var(--dt-poppy);color:var(--dt-poppy)}
+.brief-foot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
+            padding-top:18px;border-top:1px solid var(--border-2);font-size:12.5px}
+.brief-foot em{font-style:normal;color:var(--fg-2)}
+.brief-foot a{color:var(--fg-1);text-decoration:underline;text-underline-offset:2px}
+.brief-foot a:hover{color:var(--dt-poppy)}
+
 .empty{padding:56px 0;text-align:center;color:var(--fg-2)}
 
 footer{margin-top:72px;background:var(--dt-grey);color:#fff}
@@ -278,14 +320,57 @@ function refsHTML(a){
   return `<div class="refs">${parts.join('')}</div>`;
 }
 
+const CHEV = `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6.5 8 10.5 12 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+
+// Datoer i fremtiden markeres, så det er til at se hvad der endnu ikke gælder.
+// Bygget ud fra dagens dato i browseren — datasættets datoer er faste strenge.
+const today = new Date().toISOString().slice(0, 10);
+
+function briefHTML(s, id){
+  const list = items => `<ul>${items.map(t => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`;
+  const timeline = `<ol class="tl">${s.timeline.map(t => `
+      <li class="${t.date !== '—' && t.date > today ? '' : 'now'}">
+        <time>${esc(t.date)}</time>
+        <div><b>${esc(t.label)}</b>${t.note ? `<span>${esc(t.note)}</span>` : ''}</div>
+      </li>`).join('')}</ol>`;
+
+  return `<div class="brief" id="${id}" hidden>
+    <div><h4>Genstand</h4><p>${esc(s.subject)}</p></div>
+    <div><h4>Anvendelsesområde</h4><p>${esc(s.scope)}</p></div>
+    <div><h4>Kernekrav</h4>${list(s.duties)}</div>
+    <div><h4>Tidslinje</h4>${timeline}</div>
+    <div class="brief-cols">
+      <div><h4>Tilsyn i Danmark</h4><p>${esc(s.supervision)}</p></div>
+      <div><h4>Sanktioner</h4><p>${esc(s.sanctions)}</p></div>
+    </div>
+    <div><h4>Betydning for et tech-hus</h4>${list(s.note)}</div>
+    ${s.related.length ? `<div><h4>Hænger sammen med</h4>
+      <div class="rel">${s.related.map(r =>
+        `<button type="button" data-find="${esc(r)}">${esc(r)}</button>`).join('')}</div></div>` : ''}
+    <div class="brief-foot">
+      <em>Kontrolleret ${esc(s.reviewed)}</em>
+      ${s.sources.map(q => `<a href="${q.url}" target="_blank" rel="noopener">${esc(q.label)}</a>`).join('')}
+    </div>
+  </div>`;
+}
+
+let briefSeq = 0;
+
 function actHTML(a, withCat){
+  const id = a.summary ? `brief-${++briefSeq}` : null;
   return `<li class="act">
     <div>
       ${withCat ? `<p class="catname">${esc(a.cat)}</p>` : ''}
       <h3>${esc(a.name)}</h3>
       ${refsHTML(a)}
+      ${a.summary ? `<button class="brief-btn" type="button" aria-expanded="false"
+         aria-controls="${id}" data-brief="${id}">Opsummering${CHEV}</button>` : ''}
     </div>
-    <span class="pill ${a.status}">${LABELS[a.status]}</span>
+    <span class="pills">
+      <span class="pill ${a.status}">${LABELS[a.status]}</span>
+      ${a.summary ? `<span class="badge-brief">Uddybet</span>` : ''}
+    </span>
+    ${a.summary ? briefHTML(a.summary, id) : ''}
   </li>`;
 }
 
