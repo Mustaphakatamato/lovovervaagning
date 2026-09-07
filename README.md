@@ -9,9 +9,13 @@ direktiv og hver afgørelse med direkte link til teksten i EUR-Lex.
 ## Kom i gang
 
 ```sh
-python3 build.py          # samler index.html
+cp .env.example .env      # udfyld SUPABASE_ACCESS_TOKEN og SUPABASE_ANON_KEY
+python3 build.py          # henter data fra Supabase og samler index.html
 open index.html           # ingen server nødvendig
 ```
+
+Uden `.env` falder byggeriet tilbage til `eu_data.py`, så et frisk klon kan bygge
+siden uden adgang til databasen. De to kilder giver byte-identisk output.
 
 `index.html` er én fil uden eksterne kald: fonten er indlejret som data-URI, og
 datasættet ligger inline. Den kan derfor lægges bag en vilkårlig statisk host,
@@ -27,6 +31,33 @@ datasættet ligger inline. Den kan derfor lægges bag en vilkårlig statisk host
 | `eu_digital_acts.json` | Genereret data alene — til import i en database |
 | `index.html` | Bygget output. Genereret, men committed så siden kan hostes direkte |
 | `fonts/` | Montserrat variable (SIL Open Font License 1.1) |
+| `supabase/migrations/` | Skema, afledte funktioner, `acts_json`-udsigten og RLS |
+| `scripts/db.py` | Kører SQL mod Supabase via Management API'et |
+| `scripts/seed.py` | Lægger `eu_data.py` ind i databasen. Idempotent |
+
+## Database
+
+Data ligger i Supabase-projektet **Lovovervågning** (`iuniokifmwxehrcrxrtn`).
+
+```sh
+python3 scripts/db.py supabase/migrations/0001_schema.sql   # opret/opdater skema
+python3 scripts/seed.py                                     # indlæs datasættet
+python3 scripts/db.py -c "select count(*) from acts"        # ad hoc-forespørgsel
+```
+
+Databasen holder kun rådata: årstal, nummer og type. CELEX-numre, referencelabels
+og URL'er dannes af `celex()`, `act_label()` og `eurlex_url()` i SQL, så de ikke
+kan komme i utakt med tallene. Udsigten `acts_json` leverer præcis den form,
+skabelonen forventer — `build.py` omformer intet.
+
+Der er hverken `psql`, `docker` eller Supabase CLI i brug: service-nøglen kan
+ikke køre DDL, så migrationer går gennem Management API'ets query-endpoint.
+`urllib` afvises af Cloudflare, derfor `curl`.
+
+**Adgang.** RLS er slået til på alle tre tabeller med kun en læsepolicy for
+`anon` og `authenticated` — offentlig EU-information læses af alle. Der findes
+ingen skrivepolicy, så indlæsning kræver access-tokenet. `anon`-nøglen kan
+udelukkende læse.
 
 ## Sådan tilføjes en retsakt
 
