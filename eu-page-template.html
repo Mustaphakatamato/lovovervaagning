@@ -439,6 +439,21 @@ grid.addEventListener('click', e => {
 });
 qInput.addEventListener('input', route);
 window.addEventListener('hashchange', route);
+document.body.addEventListener('click', e => {
+  const briefBtn = e.target.closest('.brief-btn');
+  if (briefBtn) {
+    const panel = document.getElementById(briefBtn.dataset.brief);
+    const open = briefBtn.getAttribute('aria-expanded') === 'true';
+    briefBtn.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
+    return;
+  }
+  const findBtn = e.target.closest('[data-find]');
+  if (findBtn) {
+    qInput.value = findBtn.dataset.find;
+    route();
+  }
+});
 document.querySelectorAll('.chip').forEach(btn => {
   btn.addEventListener('click', () => {
     const s = btn.dataset.status;
