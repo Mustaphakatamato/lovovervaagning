@@ -148,11 +148,6 @@ main{padding:38px 0 0}
      background:var(--bg-card);border:1px solid var(--border-1);border-radius:var(--r-md);
      padding:22px;font:inherit;color:var(--fg-1);transition:box-shadow .18s,border-color .18s}
 .cat:hover{box-shadow:var(--shadow-3);border-color:var(--border-2)}
-/* Ingen retsakter matcher statusfilteret. Kortet bliver liggende, så gitteret
-   stadig viser alle tolv kategorier — men det skal kunne ses uden at læse
-   tallet, ellers ligner et tomt kort et med indhold. */
-.cat.tom{opacity:.42}
-.cat.tom:hover{opacity:1}
 .cat-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .cat-title{display:block;font-size:19px;font-weight:600;line-height:1.25;letter-spacing:-.01em;margin:0;
         max-width:16ch}
@@ -593,21 +588,27 @@ function actHTML(a, withCat){
 }
 
 function renderGrid(){
-  grid.innerHTML = DATA.map(c => {
+  // Et statusfilter fjerner kategorier uden match helt. Et kort med 0 er ikke
+  // et resultat, og en række nuller gør det svært at se, hvor der faktisk er
+  // noget — filteret skal vise det filtrerede, ikke datasættet med huller.
+  const kort = DATA.map(c => {
     const n = {law:0, neg:0, plan:0};
     c.acts.forEach(a => n[a.status]++);
     const t = c.acts.length;
-    const seg = k => n[k] ? `<i class="b-${k}" style="width:${(n[k]/t*100).toFixed(1)}%"></i>` : '';
-    // Med et statusfilter er tallet antallet der matcher, og bjælken viser hvor
-    // stor en del af kategorien det udgør. Uden filter er tallet kategoriens
-    // størrelse, og bjælken dens sammensætning.
     const vist = status ? n[status] : t;
-    return `<button class="cat${vist ? '' : ' tom'}" type="button" data-cat="${c.key}">
+    if (!vist) return '';
+    const seg = k => n[k] ? `<i class="b-${k}" style="width:${(n[k]/t*100).toFixed(1)}%"></i>` : '';
+    // Med filter viser bjælken hvor stor en del af kategorien der matcher;
+    // uden filter viser den kategoriens sammensætning.
+    return `<button class="cat" type="button" data-cat="${c.key}">
       <span class="cat-top"><span class="cat-title">${esc(c.name)}</span><span class="n">${vist}</span></span>
       <span class="cat-desc">${esc(c.desc)}</span>
       <span class="bar">${status ? seg(status) : seg('law') + seg('neg') + seg('plan')}</span>
     </button>`;
-  }).join('');
+  }).filter(Boolean);
+
+  grid.innerHTML = kort.length ? kort.join('')
+    : `<p class="empty">Ingen kategorier har retsakter med den valgte status.</p>`;
 }
 
 function renderDetail(key){
