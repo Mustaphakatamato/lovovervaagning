@@ -77,6 +77,7 @@ def main():
     n_sum = 0
     for (key, name), su in SUMMARIES.items():
         n_sum += 1
+        dk_status = su.get("dk_status", "unmapped")
         stmts.append(
             f"update acts set "
             f"subject = {lit(su['subject'])}, "
@@ -88,13 +89,53 @@ def main():
             f"consultant_note = {arr(su['consultant_note'])}, "
             f"related = {arr(su['related'])}, "
             f"sources = {js(su['sources'])}, "
-            f"summary_reviewed = {lit(REVIEWED)}::date "
+            f"summary_reviewed = {lit(REVIEWED)}::date, "
+            f"dk_status = {lit(dk_status)}::dk_status, "
+            f"dk_instrument = {lit(su.get('dk_instrument'))}, "
+            f"dk_instrument_ref = {lit(su.get('dk_instrument_ref'))}, "
+            f"dk_instrument_url = {lit(su.get('dk_instrument_url'))}, "
+            f"dk_timeline = {js(su.get('dk_timeline', []))} "
             f"where category_key = {lit(key)} and name = {lit(name)};"
         )
 
+    # Myndigheder genbruges på tværs af retsakter, derfor upsert på navn frem
+    # for at høre under en enkelt retsakt.
+    n_auth = 0
+    seen_authorities = {}
+    for (key, name), su in SUMMARIES.items():
+        for au in su.get("dk_authorities", []):
+            seen_authorities[au["name"]] = au.get("url")
+
+    for auth_name, url in seen_authorities.items():
+        stmts.append(
+            f"insert into authorities (name, homepage_url) "
+            f"values ({lit(auth_name)}, {lit(url)}) "
+            f"on conflict (name) do update set homepage_url = excluded.homepage_url;"
+        )
+
+    # act_authorities ryddes og genopbygges pr. retsakt ved hver kørsel — i
+    # modsætning til act_references er der ingen ord-baseret nøgle at
+    # bevare stabil, og en fjernet myndighed skal rent faktisk forsvinde.
+    for (key, name), su in SUMMARIES.items():
+        authorities = su.get("dk_authorities", [])
+        stmts.append(
+            f"delete from act_authorities where act_id = "
+            f"(select id from acts where category_key = {lit(key)} and name = {lit(name)});"
+        )
+        for order, au in enumerate(authorities):
+            n_auth += 1
+            stmts.append(
+                f"insert into act_authorities (act_id, authority_id, scope_note, sort_order) "
+                f"select a.id, auth.id, {lit(au.get('scope'))}, {order} "
+                f"from acts a, authorities auth "
+                f"where a.category_key = {lit(key)} and a.name = {lit(name)} "
+                f"and auth.name = {lit(au['name'])};"
+            )
+
     run("\n".join(stmts))
     print(f"indlæst: {len(CATS)} kategorier, {n_acts} retsakter, "
-          f"{n_refs} referencer, {n_sum} opsummeringer")
+          f"{n_refs} referencer, {n_sum} opsummeringer, "
+          f"{len(seen_authorities)} myndigheder, {n_auth} tilsynskoblinger")
 
 
 if __name__ == "__main__":

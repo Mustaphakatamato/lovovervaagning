@@ -75,6 +75,26 @@ def _summary(s):
     }
 
 
+def _dk(d):
+    """Samme nøglerækkefølge som resten — se canonical()."""
+    if not d:
+        return None
+    return {
+        "status": d["status"],
+        "instrument": d.get("instrument"),
+        "instrumentRef": d.get("instrumentRef"),
+        "instrumentUrl": d.get("instrumentUrl"),
+        "timeline": [
+            {"date": t["date"], "label": t["label"], "note": t.get("note")}
+            for t in d.get("timeline", [])
+        ],
+        "authorities": [
+            {"name": au["name"], "url": au.get("url"), "scope": au.get("scope")}
+            for au in d.get("authorities", [])
+        ],
+    }
+
+
 def canonical(data):
     """Fastlægger nøglerækkefølgen, så begge kilder giver byte-identisk output.
 
@@ -99,6 +119,7 @@ def canonical(data):
                     "proc": a["proc"],
                     "procUrl": a["procUrl"],
                     "summary": _summary(a.get("summary")),
+                    "dk": _dk(a.get("dk")),
                 }
                 for a in c["acts"]
             ],

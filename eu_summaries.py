@@ -70,13 +70,24 @@ SUMMARIES = {
         "ePrivacy Regulation",
         "Data Governance Act (DGA)",
         "European Health Data Space",
-        "Digital Omnibus (Omnibus VII)",
         "AI Act",
     ],
     sources=[
         {"label": "Datatilsynet", "url": "https://www.datatilsynet.dk"},
         {"label": "Databeskyttelsesloven på retsinformation.dk",
          "url": "https://www.retsinformation.dk/eli/lta/2018/502"},
+    ],
+    dk_status="transposed",
+    dk_instrument="Databeskyttelsesloven",
+    dk_instrument_ref="Lov nr. 502 af 23. maj 2018",
+    dk_instrument_url="https://www.retsinformation.dk/eli/lta/2018/502",
+    dk_timeline=[
+        {"date": "2018-05-17", "label": "Vedtaget af Folketinget"},
+        {"date": "2018-05-25", "label": "I kraft og anvendes",
+         "note": "Samtidig med at GDPR blev anvendelig — loven udnytter forordningens nationale råderum, den erstatter ikke GDPR"},
+    ],
+    dk_authorities=[
+        {"name": "Datatilsynet", "url": "https://www.datatilsynet.dk"},
     ],
 ),
 
@@ -144,7 +155,6 @@ SUMMARIES = {
         "Cyber Resilience Act",
         "Product Liability Directive (PLD)",
         "Machinery Regulation",
-        "Cloud and AI Development Act",
         "AI Liability Directive",
     ],
     sources=[
@@ -155,6 +165,24 @@ SUMMARIES = {
         {"label": "Datatilsynet om AI-forordningen", "url": "https://www.datatilsynet.dk"},
         {"label": "Ændringsforordning (EU) 2026/1744",
          "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32026R1744"},
+    ],
+    dk_status="pending",
+    dk_instrument=None,
+    dk_instrument_ref=None,
+    dk_instrument_url=None,
+    dk_timeline=[
+        {"date": "2024-08-01", "label": "I kraft i Danmark",
+         "note": "Direkte gældende som forordning — ingen dansk gennemførelseslov krævet for forordningen selv"},
+        {"date": "—", "label": "Tilsynsfordeling endnu ikke fastlagt",
+         "note": "Digitaliseringsstyrelsens egen FAQ kalder pr. september 2026 tilsynet med højrisiko- og transparenspligterne uafklaret"},
+    ],
+    dk_authorities=[
+        {"name": "Digitaliseringsstyrelsen", "url": "https://digst.dk",
+         "scope": "Bemyndigende myndighed, centralt kontaktpunkt, og markedsovervågning af forbudt praksis efter art. 5, stk. 1, litra a–c og e–f"},
+        {"name": "Datatilsynet", "url": "https://www.datatilsynet.dk",
+         "scope": "Forbudt praksis efter art. 5, stk. 1, litra d og g"},
+        {"name": "Domstolsstyrelsen", "url": "https://domstolsstyrelsen.dk",
+         "scope": "Domstolenes egen administrative brug af AI-systemer"},
     ],
 ),
 

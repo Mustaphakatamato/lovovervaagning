@@ -69,6 +69,31 @@ ikke vurdere, om teksten stadig holder. Ret datoen, når indholdet er gennemgåe
 
 Skrevet indtil videre: GDPR og AI-forordningen.
 
+## Dansk implementering
+
+En retsakt kan derudover have en dansk implementeringsstatus: er den direkte
+gældende, gennemført ved en dansk lov, eller afventer den stadig dansk
+gennemførelse — og hvilken/hvilke danske myndigheder fører tilsyn. Feltet er
+uafhængigt af opsummeringen ovenfor: en forordning kan vise dansk status uden
+nogensinde at få en fuld konsulentopsummering.
+
+| Felt | Indhold |
+|---|---|
+| `dk_status` | `direct` (direkte gældende), `transposed` (gennemført), `pending` (afventer), eller `unmapped` (ikke undersøgt — default) |
+| `dk_instrument` | Navnet på den danske lov/bekendtgørelse, hvis der findes én. Tomt for rene forordninger |
+| `dk_instrument_ref` | Den officielle betegnelse, fx "Lov nr. 502 af 23. maj 2018" |
+| `dk_instrument_url` | Link til retsinformation.dk |
+| `dk_timeline` | Danske milepæle, samme form som `timeline`: `[{date, label, note}]` |
+| `dk_authorities` | Liste af `{name, url, scope}` — flere myndigheder pr. retsakt understøttes, hver med sit afgrænsede ansvarsområde |
+
+Skrives i `eu_summaries.py` sammen med resten af opsummeringen og lægges i
+databasen af `scripts/seed.py`, som også holder tabellerne `authorities` og
+`act_authorities` ajour. `unmapped` er default for alle retsakter, der endnu
+ikke er research'et — status vises hverken som badge eller i panelet, før den
+er sat til noget andet.
+
+Skrevet indtil videre: GDPR og AI-forordningen.
+
 ## Database
 
 Data ligger i Supabase-projektet **Lovovervågning** (`iuniokifmwxehrcrxrtn`).

@@ -17,7 +17,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Horizon Europe Regulation",
@@ -37,7 +38,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on a pilot regime for distributed ledger technology market infrastructures",
@@ -52,7 +54,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -74,7 +77,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "InvestEU Programme Regulation",
@@ -89,7 +93,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Connecting Europe Facility Regulation",
@@ -104,7 +109,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on the High Performance Computing Joint Undertaking",
@@ -119,7 +125,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on Joint Undertakings under Horizon Europe",
@@ -134,7 +141,8 @@
     ],
     "proc": "2022/0033(NLE)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0033(NLE)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Decision on a path to the Digital Decade",
@@ -149,7 +157,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Chips Act",
@@ -158,7 +167,8 @@
     "refs": [],
     "proc": "2022/0032(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0032(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Critical Raw Materials Act",
@@ -167,7 +177,8 @@
     "refs": [],
     "proc": "2023/0079(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0079(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Strategic Technologies for Europe Platform (STEP)",
@@ -176,7 +187,8 @@
     "refs": [],
     "proc": "2023/0199(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0199(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -198,7 +210,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Radio Spectrum Decision",
@@ -213,7 +226,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Broadband Cost Reduction Directive",
@@ -228,7 +242,8 @@
     ],
     "proc": "2023/0046(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0046(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Open Internet Access Regulation",
@@ -243,7 +258,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Electronic Communications Code Directive (EECC)",
@@ -258,7 +274,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Roaming Regulation",
@@ -273,7 +290,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on the Union Secure Connectivity Programme",
@@ -288,7 +306,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": ".eu top-level domain Regulation",
@@ -303,7 +322,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "New radio spectrum policy programme (RSPP 2.0)",
@@ -312,7 +332,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Telecoms Act / Fair Share initiative",
@@ -321,7 +342,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -392,7 +414,6 @@
       "ePrivacy Regulation",
       "Data Governance Act (DGA)",
       "European Health Data Space",
-      "Digital Omnibus (Omnibus VII)",
       "AI Act"
      ],
      "sources": [
@@ -406,6 +427,31 @@
       }
      ],
      "reviewed": "2026-09-07"
+    },
+    "dk": {
+     "status": "transposed",
+     "instrument": "Databeskyttelsesloven",
+     "instrumentRef": "Lov nr. 502 af 23. maj 2018",
+     "instrumentUrl": "https://www.retsinformation.dk/eli/lta/2018/502",
+     "timeline": [
+      {
+       "date": "2018-05-17",
+       "label": "Vedtaget af Folketinget",
+       "note": null
+      },
+      {
+       "date": "2018-05-25",
+       "label": "I kraft og anvendes",
+       "note": "Samtidig med at GDPR blev anvendelig — loven udnytter forordningens nationale råderum, den erstatter ikke GDPR"
+      }
+     ],
+     "authorities": [
+      {
+       "name": "Datatilsynet",
+       "url": "https://www.datatilsynet.dk",
+       "scope": null
+      }
+     ]
     }
    },
    {
@@ -421,7 +467,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on the free flow of non-personal data",
@@ -436,7 +483,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Open Data Directive (PSI)",
@@ -451,7 +499,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Data Governance Act (DGA)",
@@ -466,7 +515,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "ePrivacy Regulation",
@@ -475,7 +525,8 @@
     "refs": [],
     "proc": "2017/0003(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2017/0003(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Data Act",
@@ -484,7 +535,8 @@
     "refs": [],
     "proc": "2022/0047(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0047(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Health Data Space",
@@ -493,7 +545,8 @@
     "refs": [],
     "proc": "2022/0140(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0140(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on data collection and sharing for short-term rental",
@@ -502,7 +555,8 @@
     "refs": [],
     "proc": "2022/0358(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0358(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Harmonisation of GDPR enforcement",
@@ -511,7 +565,8 @@
     "refs": [],
     "proc": "2023/0202(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0202(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Interoperable Europe Act",
@@ -520,7 +575,8 @@
     "refs": [],
     "proc": "2022/0379(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0379(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Access to vehicle data, functions and resources",
@@ -529,7 +585,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "GreenData4All",
@@ -538,7 +595,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -560,7 +618,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Community Design Regulation",
@@ -575,7 +634,8 @@
     ],
     "proc": "2022/0391(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0391(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Enforcement Directive (IPR)",
@@ -590,7 +650,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Directive on the protection of trade secrets",
@@ -605,7 +666,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Standard essential patents",
@@ -614,7 +676,8 @@
     "refs": [],
     "proc": "2023/0133(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0133(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Design Directive",
@@ -623,7 +686,8 @@
     "refs": [],
     "proc": "2022/0392(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0392(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Compulsory licensing of patents",
@@ -632,7 +696,8 @@
     "refs": [],
     "proc": "2023/0129(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0129(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -654,7 +719,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation establishing the European Cybersecurity Competence Centre",
@@ -669,7 +735,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "NIS 2 Directive",
@@ -684,7 +751,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Information Security Regulation",
@@ -693,7 +761,8 @@
     "refs": [],
     "proc": "2022/0084(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0084(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Cybersecurity Regulation",
@@ -702,7 +771,8 @@
     "refs": [],
     "proc": "2022/0085(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0085(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Cyber Resilience Act",
@@ -711,7 +781,8 @@
     "refs": [],
     "proc": "2022/0272(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0272(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Cyber Solidarity Act",
@@ -720,7 +791,8 @@
     "refs": [],
     "proc": "2023/0109(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0109(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -742,7 +814,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Directive on combating fraud and counterfeiting of non-cash means of payment",
@@ -757,7 +830,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on addressing the dissemination of terrorist content online",
@@ -772,7 +846,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Temporary CSAM Regulation",
@@ -787,7 +862,8 @@
     ],
     "proc": "2022/0155(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0155(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "E-evidence Regulation",
@@ -796,7 +872,8 @@
     "refs": [],
     "proc": "2018/0108(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2018/0108(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Digitalisation of travel documents",
@@ -805,7 +882,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -827,7 +905,8 @@
     ],
     "proc": "2022/0302(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0302(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Standardisation Regulation",
@@ -842,7 +921,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Radio Equipment Directive (RED)",
@@ -857,7 +937,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "eIDAS Regulation",
@@ -872,7 +953,8 @@
     ],
     "proc": "2021/0136(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0136(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation establishing a Single Digital Gateway",
@@ -887,7 +969,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "General Product Safety Regulation",
@@ -902,7 +985,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Machinery Regulation",
@@ -917,7 +1001,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "AI Act",
@@ -995,7 +1080,6 @@
       "Cyber Resilience Act",
       "Product Liability Directive (PLD)",
       "Machinery Regulation",
-      "Cloud and AI Development Act",
       "AI Liability Directive"
      ],
      "sources": [
@@ -1017,6 +1101,41 @@
       }
      ],
      "reviewed": "2026-09-07"
+    },
+    "dk": {
+     "status": "pending",
+     "instrument": null,
+     "instrumentRef": null,
+     "instrumentUrl": null,
+     "timeline": [
+      {
+       "date": "2024-08-01",
+       "label": "I kraft i Danmark",
+       "note": "Direkte gældende som forordning — ingen dansk gennemførelseslov krævet for forordningen selv"
+      },
+      {
+       "date": "—",
+       "label": "Tilsynsfordeling endnu ikke fastlagt",
+       "note": "Digitaliseringsstyrelsens egen FAQ kalder pr. september 2026 tilsynet med højrisiko- og transparenspligterne uafklaret"
+      }
+     ],
+     "authorities": [
+      {
+       "name": "Digitaliseringsstyrelsen",
+       "url": "https://digst.dk",
+       "scope": "Bemyndigende myndighed, centralt kontaktpunkt, og markedsovervågning af forbudt praksis efter art. 5, stk. 1, litra a–c og e–f"
+      },
+      {
+       "name": "Datatilsynet",
+       "url": "https://www.datatilsynet.dk",
+       "scope": "Forbudt praksis efter art. 5, stk. 1, litra d og g"
+      },
+      {
+       "name": "Domstolsstyrelsen",
+       "url": "https://domstolsstyrelsen.dk",
+       "scope": "Domstolenes egen administrative brug af AI-systemer"
+      }
+     ]
     }
    },
    {
@@ -1026,7 +1145,8 @@
     "refs": [],
     "proc": "2022/0095(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0095(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "AI Liability Directive",
@@ -1035,7 +1155,8 @@
     "refs": [],
     "proc": "2022/0303(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0303(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -1057,7 +1178,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "E-commerce Directive",
@@ -1072,7 +1194,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Unfair Commercial Practices Directive (UCPD)",
@@ -1087,7 +1210,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Consumer Rights Directive (CRD)",
@@ -1102,7 +1226,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "e-Invoicing Directive",
@@ -1117,7 +1242,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Geo-blocking Regulation",
@@ -1132,7 +1258,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Digital Content Directive",
@@ -1147,7 +1274,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Directive on certain aspects concerning contracts for the sale of goods",
@@ -1162,7 +1290,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Digital Services Act (DSA)",
@@ -1177,7 +1306,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Political Advertising Regulation",
@@ -1186,7 +1316,8 @@
     "refs": [],
     "proc": "2021/0381(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0381(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Right to Repair Directive",
@@ -1195,7 +1326,8 @@
     "refs": [],
     "proc": "2023/0083(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0083(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Multimodal digital mobility services (MDMS)",
@@ -1204,7 +1336,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Consumer protection: strengthened enforcement cooperation",
@@ -1213,7 +1346,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Consumer rights: adapting ADR to digital markets",
@@ -1222,7 +1356,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -1244,7 +1379,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Company Law Directive",
@@ -1259,7 +1395,8 @@
     ],
     "proc": "2023/0089(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0089(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Market Surveillance Regulation",
@@ -1274,7 +1411,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Platform-to-Business Regulation (P2B)",
@@ -1289,7 +1427,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Vertical Block Exemption Regulation (VBER)",
@@ -1304,7 +1443,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Digital Markets Act (DMA)",
@@ -1319,7 +1459,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Regulation on foreign subsidies distorting the internal market",
@@ -1334,7 +1475,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Horizontal Block Exemption Regulations (HBER)",
@@ -1354,7 +1496,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Platform Work Directive",
@@ -1363,7 +1506,8 @@
     "refs": [],
     "proc": "2021/0414(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0414(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Single Market Emergency Instrument (SMEI)",
@@ -1372,7 +1516,8 @@
     "refs": [],
     "proc": "2022/0278(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0278(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -1394,7 +1539,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Information Society Directive (InfoSoc)",
@@ -1409,7 +1555,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Audiovisual Media Services Directive (AVMSD)",
@@ -1424,7 +1571,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Portability Regulation",
@@ -1439,7 +1587,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Satellite and Cable II Directive",
@@ -1454,7 +1603,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Copyright Directive (DSM)",
@@ -1469,7 +1619,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "European Media Freedom Act",
@@ -1478,7 +1629,8 @@
     "refs": [],
     "proc": "2022/0277(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0277(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  },
@@ -1500,7 +1652,8 @@
     ],
     "proc": "2022/0407(CNS)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0407(CNS)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Payment Services Directive 2 (PSD2)",
@@ -1515,7 +1668,8 @@
     ],
     "proc": "2023/0209(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0209(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Digital Operational Resilience Act (DORA)",
@@ -1530,7 +1684,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Markets in Crypto-Assets Regulation (MiCA)",
@@ -1545,7 +1700,8 @@
     ],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Financial Data Access Regulation (FiDA)",
@@ -1554,7 +1710,8 @@
     "refs": [],
     "proc": "2023/0205(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0205(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Digital euro Regulation",
@@ -1563,7 +1720,8 @@
     "refs": [],
     "proc": "2023/0212(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0212(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Payment Services Regulation",
@@ -1572,7 +1730,8 @@
     "refs": [],
     "proc": "2023/0210(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0210(COD)",
-    "summary": null
+    "summary": null,
+    "dk": null
    },
    {
     "name": "Revision of the Late Payments Directive",
@@ -1581,7 +1740,8 @@
     "refs": [],
     "proc": null,
     "procUrl": null,
-    "summary": null
+    "summary": null,
+    "dk": null
    }
   ]
  }

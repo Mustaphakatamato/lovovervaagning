@@ -173,6 +173,7 @@ main{padding:38px 0 0}
 .pill.law{background:var(--dt-lightgrey);color:var(--fg-1);border-color:var(--border-2)}
 .pill.neg{background:var(--dt-poppy-lighter);color:var(--fg-1);border-color:var(--dt-poppy-light)}
 .pill.plan{background:transparent;color:var(--fg-2);border-color:var(--border-2);border-style:dashed}
+.pill.dk{background:transparent;color:var(--fg-2);border-color:var(--border-2)}
 .act .catname{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
               color:var(--dt-poppy);margin:0 0 6px}
 
@@ -211,6 +212,12 @@ main{padding:38px 0 0}
             border-radius:var(--r-pill);border:1px solid var(--border-2);
             background:var(--bg-card);color:var(--fg-1)}
 .rel button:hover{border-color:var(--dt-poppy);color:var(--dt-poppy)}
+.auth-list{display:flex;flex-wrap:wrap;gap:10px}
+.auth-chip{display:flex;flex-direction:column;gap:3px;max-width:280px;padding:9px 14px;
+           border:1px solid var(--border-2);border-radius:var(--r-md);background:var(--bg-card)}
+.auth-chip a{font-size:13px;font-weight:600;color:var(--fg-1);text-decoration:none}
+.auth-chip a:hover{color:var(--dt-poppy)}
+.auth-chip span{font-size:12.5px;line-height:1.45;color:var(--fg-2)}
 .brief-foot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
             padding-top:18px;border-top:1px solid var(--border-2);font-size:12.5px}
 .brief-foot em{font-style:normal;color:var(--fg-2)}
@@ -292,6 +299,7 @@ footer a{color:#fff}
 <script>
 const DATA = __DATA__;
 const LABELS = {law:"Gældende ret", neg:"I forhandling", plan:"Planlagt"};
+const DK_LABELS = {direct:"DK: direkte gældende", transposed:"DK: gennemført", pending:"DK: afventer gennemførelse"};
 const grid = document.getElementById('grid');
 const detail = document.getElementById('detail');
 const results = document.getElementById('results');
@@ -326,19 +334,42 @@ const CHEV = `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-h
 // Bygget ud fra dagens dato i browseren — datasættets datoer er faste strenge.
 const today = new Date().toISOString().slice(0, 10);
 
-function briefHTML(s, id){
-  const list = items => `<ul>${items.map(t => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`;
-  const timeline = `<ol class="tl">${s.timeline.map(t => `
+function timelineHTML(items){
+  return `<ol class="tl">${items.map(t => `
       <li class="${t.date !== '—' && t.date > today ? '' : 'now'}">
         <time>${esc(t.date)}</time>
         <div><b>${esc(t.label)}</b>${t.note ? `<span>${esc(t.note)}</span>` : ''}</div>
       </li>`).join('')}</ol>`;
+}
+
+function dkHTML(dk){
+  if (!dk) return '';
+  const instrument = dk.instrument
+    ? `<p><a class="ref" href="${dk.instrumentUrl}" target="_blank" rel="noopener">${esc(dk.instrument)}<span class="celex">${esc(dk.instrumentRef || '')}</span></a></p>`
+    : `<p>Direkte gældende i Danmark — ingen dansk gennemførelseslov krævet.</p>`;
+  const authorities = dk.authorities.length
+    ? `<div class="auth-list">${dk.authorities.map(au => `
+        <div class="auth-chip">
+          ${au.url ? `<a href="${au.url}" target="_blank" rel="noopener">${esc(au.name)}</a>` : `<span>${esc(au.name)}</span>`}
+          ${au.scope ? `<span>${esc(au.scope)}</span>` : ''}
+        </div>`).join('')}</div>`
+    : '';
+  return `<div><h4>Dansk implementering</h4>
+    ${instrument}
+    ${dk.timeline.length ? timelineHTML(dk.timeline) : ''}
+    ${authorities}
+  </div>`;
+}
+
+function briefHTML(s, dk, id){
+  const list = items => `<ul>${items.map(t => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`;
 
   return `<div class="brief" id="${id}" hidden>
     <div><h4>Genstand</h4><p>${esc(s.subject)}</p></div>
     <div><h4>Anvendelsesområde</h4><p>${esc(s.scope)}</p></div>
     <div><h4>Kernekrav</h4>${list(s.duties)}</div>
-    <div><h4>Tidslinje</h4>${timeline}</div>
+    <div><h4>Tidslinje</h4>${timelineHTML(s.timeline)}</div>
+    ${dkHTML(dk)}
     <div class="brief-cols">
       <div><h4>Tilsyn i Danmark</h4><p>${esc(s.supervision)}</p></div>
       <div><h4>Sanktioner</h4><p>${esc(s.sanctions)}</p></div>
@@ -369,8 +400,9 @@ function actHTML(a, withCat){
     <span class="pills">
       <span class="pill ${a.status}">${LABELS[a.status]}</span>
       ${a.summary ? `<span class="badge-brief">Uddybet</span>` : ''}
+      ${a.dk ? `<span class="pill dk">${esc(DK_LABELS[a.dk.status])}</span>` : ''}
     </span>
-    ${a.summary ? briefHTML(a.summary, id) : ''}
+    ${a.summary ? briefHTML(a.summary, a.dk, id) : ''}
   </li>`;
 }
 

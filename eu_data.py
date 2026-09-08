@@ -184,6 +184,10 @@ def build():
                 for y, n in a.get("ref", [])
             ]
             s = SUMMARIES.get((key, a["n"]))
+            # dk ligger ved siden af summary, ikke inde i det — dansk
+            # implementeringsstatus skal kunne vises uafhængigt af, om
+            # retsakten har fået en fuld konsulentopsummering.
+            dk_status = s.get("dk_status", "unmapped") if s else "unmapped"
             items.append({
                 "name": a["n"], "type": a["t"], "status": a["s"], "refs": refs,
                 "proc": a.get("proc"), "procUrl": oeil_url(a["proc"]) if a.get("proc") else None,
@@ -193,6 +197,14 @@ def build():
                     "sanctions": s["sanctions"], "note": s["consultant_note"],
                     "related": s["related"], "sources": s["sources"], "reviewed": REVIEWED,
                 } if s else None,
+                "dk": {
+                    "status": dk_status,
+                    "instrument": s.get("dk_instrument"),
+                    "instrumentRef": s.get("dk_instrument_ref"),
+                    "instrumentUrl": s.get("dk_instrument_url"),
+                    "timeline": s.get("dk_timeline", []),
+                    "authorities": s.get("dk_authorities", []),
+                } if dk_status != "unmapped" else None,
             })
         out.append({"key": key, "name": name, "desc": desc, "acts": items})
     return out
