@@ -134,6 +134,11 @@ main{padding:38px 0 0}
      background:var(--bg-card);border:1px solid var(--border-1);border-radius:var(--r-md);
      padding:22px;font:inherit;color:var(--fg-1);transition:box-shadow .18s,border-color .18s}
 .cat:hover{box-shadow:var(--shadow-3);border-color:var(--border-2)}
+/* Ingen retsakter matcher statusfilteret. Kortet bliver liggende, så gitteret
+   stadig viser alle tolv kategorier — men det skal kunne ses uden at læse
+   tallet, ellers ligner et tomt kort et med indhold. */
+.cat.tom{opacity:.42}
+.cat.tom:hover{opacity:1}
 .cat-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .cat-title{display:block;font-size:19px;font-weight:600;line-height:1.25;letter-spacing:-.01em;margin:0;
         max-width:16ch}
@@ -388,11 +393,17 @@ const qInput = document.getElementById('q');
 let status = null;
 
 const all = DATA.flatMap(c => c.acts.map(a => ({...a, cat: c.name, catKey: c.key})));
-const count = s => all.filter(a => a.status === s).length;
-document.getElementById('s-total').textContent = all.length;
-document.getElementById('s-cats').textContent = DATA.length;
-document.getElementById('s-law').textContent = count('law');
-document.getElementById('s-neg').textContent = count('neg');
+// Tallene beskriver det aktuelle udvalg, ikke datasættet. Uden filter er de to
+// det samme; med et statusfilter skal de følge det, ellers står der 104
+// retsakter over en liste, der viser 68.
+function updateStats(){
+  const vist = status ? all.filter(a => a.status === status) : all;
+  const n = s => vist.filter(a => a.status === s).length;
+  document.getElementById('s-total').textContent = vist.length;
+  document.getElementById('s-cats').textContent = new Set(vist.map(a => a.catKey)).size;
+  document.getElementById('s-law').textContent = n('law');
+  document.getElementById('s-neg').textContent = n('neg');
+}
 document.getElementById('foot').innerHTML =
   'Kategoriinddelingen følger Bruegel og kaizenner.eu, <em>Overview of EU Legislation in the Digital Sector</em>. ' +
   'Referencer og CELEX-numre er genereret ud fra retsakternes nummer og type — kontrollér et link, før det citeres. ' +
@@ -573,10 +584,14 @@ function renderGrid(){
     c.acts.forEach(a => n[a.status]++);
     const t = c.acts.length;
     const seg = k => n[k] ? `<i class="b-${k}" style="width:${(n[k]/t*100).toFixed(1)}%"></i>` : '';
-    return `<button class="cat" type="button" data-cat="${c.key}">
-      <span class="cat-top"><span class="cat-title">${esc(c.name)}</span><span class="n">${t}</span></span>
+    // Med et statusfilter er tallet antallet der matcher, og bjælken viser hvor
+    // stor en del af kategorien det udgør. Uden filter er tallet kategoriens
+    // størrelse, og bjælken dens sammensætning.
+    const vist = status ? n[status] : t;
+    return `<button class="cat${vist ? '' : ' tom'}" type="button" data-cat="${c.key}">
+      <span class="cat-top"><span class="cat-title">${esc(c.name)}</span><span class="n">${vist}</span></span>
       <span class="cat-desc">${esc(c.desc)}</span>
-      <span class="bar">${seg('law')}${seg('neg')}${seg('plan')}</span>
+      <span class="bar">${status ? seg(status) : seg('law') + seg('neg') + seg('plan')}</span>
     </button>`;
   }).join('');
 }
@@ -622,11 +637,15 @@ function show(which){
 
 function route(){
   document.title = BASE_TITLE;
+  updateStats();
   const q = qInput.value.trim();
   if (q) return renderSearch(q);
   const hash = location.hash.replace(/^#/, '');
   if (hash.startsWith('akt/')) return renderAct(hash.slice(4));
   if (hash) return renderDetail(hash);
+  // Gitteret skal gen-renderes, ikke bare gøres synligt: statusfilteret
+  // ændrer både tallene og bjælkerne på hvert kategorikort.
+  renderGrid();
   show('grid');
 }
 
@@ -678,6 +697,5 @@ mq.addEventListener('change', e => {
   if (!valgt) setTheme(e.matches ? 'dark' : 'light', false);
 });
 
-renderGrid();
 route();
 </script>

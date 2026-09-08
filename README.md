@@ -5,7 +5,7 @@ inddelt i tolv kategorier. Klik en kategori for at se hver forordning, hvert
 direktiv og hver afgørelse — og klik en retsakt for at få dens egen side med
 anvendelsesdato, dansk implementering, tilsyn og link til teksten i EUR-Lex.
 
-**104 retsakter** — 67 gældende, 28 i forhandling, 9 planlagte initiativer.
+**104 retsakter** — 68 gældende, 27 i forhandling, 9 planlagte initiativer.
 
 ## Kom i gang
 
