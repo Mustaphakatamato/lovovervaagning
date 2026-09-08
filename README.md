@@ -2,7 +2,8 @@
 
 En selvbærende oversigtsside over de EU-retsakter, der regulerer teknologi,
 inddelt i tolv kategorier. Klik en kategori for at se hver forordning, hvert
-direktiv og hver afgørelse med direkte link til teksten i EUR-Lex.
+direktiv og hver afgørelse — og klik en retsakt for at få dens egen side med
+anvendelsesdato, dansk implementering, tilsyn og link til teksten i EUR-Lex.
 
 **104 retsakter** — 67 gældende, 28 i forhandling, 9 planlagte initiativer.
 
@@ -32,9 +33,33 @@ datasættet ligger inline. Den kan derfor lægges bag en vilkårlig statisk host
 | `eu_digital_acts.json` | Genereret data alene — til import i en database |
 | `index.html` | Bygget output. Genereret, men committed så siden kan hostes direkte |
 | `fonts/` | Montserrat variable (SIL Open Font License 1.1) |
-| `supabase/migrations/` | Skema, afledte funktioner, `acts_json`-udsigten og RLS |
+| `supabase/migrations/` | Skema, afledte funktioner (`celex`, `slug`, …), `acts_json`-udsigten og RLS |
 | `scripts/db.py` | Kører SQL mod Supabase via Management API'et |
 | `scripts/seed.py` | Lægger `eu_data.py` ind i databasen. Idempotent |
+
+## Aktsider og adresser
+
+Hver retsakt har sin egen side på `#akt/<slug>` — fx `index.html#akt/gdpr`.
+Sluggen afledes af navnet: slutter navnet på en forkortelse i parentes, bruges
+den (`(GDPR)` → `gdpr`), ellers kebab-case af hele navnet
+(`Cyber Resilience Act` → `cyber-resilience-act`). `slug()` findes både i SQL og
+i `eu_data.py`, som `celex()` og `eurlex_url()` gør.
+
+CELEX virker som alias, så `#akt/32016R0679` fører til samme side. Det er ikke
+pynt: en slug afledt af navnet dør, hvis navnet rettes, og så dør de delte
+links. CELEX-nummeret ændrer sig aldrig. `build.py` afbryder ved slug-kollision,
+fordi to retsakter på samme adresse ville sende læseren til den forkerte side,
+uden at noget så galt ud.
+
+Sidens rækkefølge er dens indhold: identitet, dernæst faktalaget — *Gælder fra i
+EU* og *Dansk implementering* — og først derefter det redaktionelle. Et felt, der
+mangler, skriver *Ikke registreret* eller *Ikke kortlagt endnu*: en tom kasse
+læses som en fejl på siden. Retsakter uden opsummering skriver det selv frem for
+at se halvfærdige ud.
+
+Siden er stadig én fil. Routingen er hash-baseret, så deep links, tilbage-knappen
+og `file://` virker uden hosting — og fonten skal ikke ud i en delt fil, som 104
+selvstændige HTML-filer ville kræve (688 KB TTF, 918 KB base64, pr. side).
 
 ## Opsummeringer
 
@@ -59,7 +84,7 @@ Ni felter pr. opsummering:
 | `supervision_dk` | Dansk tilsynsmyndighed |
 | `sanctions` | Bødeniveau |
 | `consultant_note` | Hvad det betyder for et tech-hus: leverancer, faldgruber, rolleskift |
-| `related` | Andre retsakter i datasættet. Bliver klikbare opslag |
+| `related` | Andre retsakter. Bliver links til deres egne sider; navne uden for datasættet vises som ren tekst |
 | `sources` | Links til de kilder, indholdet er kontrolleret mod |
 
 `summary_reviewed` sættes af `REVIEWED` i `eu_summaries.py` og vises som
@@ -99,15 +124,15 @@ Skrevet indtil videre: GDPR og AI-forordningen.
 Data ligger i Supabase-projektet **Lovovervågning** (`iuniokifmwxehrcrxrtn`).
 
 ```sh
-python3 scripts/db.py supabase/migrations/0001_schema.sql   # opret/opdater skema
+for m in supabase/migrations/*.sql; do python3 scripts/db.py "$m"; done
 python3 scripts/seed.py                                     # indlæs datasættet
 python3 scripts/db.py -c "select count(*) from acts"        # ad hoc-forespørgsel
 ```
 
-Databasen holder kun rådata: årstal, nummer og type. CELEX-numre, referencelabels
-og URL'er dannes af `celex()`, `act_label()` og `eurlex_url()` i SQL, så de ikke
-kan komme i utakt med tallene. Udsigten `acts_json` leverer præcis den form,
-skabelonen forventer — `build.py` omformer intet.
+Databasen holder kun rådata: årstal, nummer og type. CELEX-numre, referencelabels,
+URL'er og slugs dannes af `celex()`, `act_label()`, `eurlex_url()` og `slug()` i
+SQL, så de ikke kan komme i utakt med det, de bygger på. Udsigten `acts_json`
+leverer præcis den form, skabelonen forventer — `build.py` omformer intet.
 
 Der er hverken `psql`, `docker` eller Supabase CLI i brug: service-nøglen kan
 ikke køre DDL, så migrationer går gennem Management API'ets query-endpoint.
@@ -131,6 +156,10 @@ dict(n="NIS 2 Directive",      t="L", s="law", ref=[(2022, 2555)]),
 - `s` — status: `law` gældende ret, `neg` i forhandling, `plan` planlagt initiativ
 - `ref` — `[(år, nummer)]` for vedtagne retsakter; giver et EUR-Lex-link
 - `proc` — procedurenummer; giver et link til Europa-Parlamentets Legislative Observatory
+- `app` / `appn` — EU-anvendelsesdato som `ÅÅÅÅ-MM-DD`, og et forbehold når
+  datoerne er trappede, som AI-forordningens fem. Ikke det samme som
+  `dk_timeline`: `app` er hvornår retsakten gælder i EU, `dk_timeline` er hvad
+  Danmark har gjort ved den
 
 CELEX-nummeret dannes som sektor `3` + år + typebogstav + firecifret nummer, fx
 `32022L2555`. Referencelabels får korrekt traktatsuffiks (EEC / EC / EU) ud fra året.
@@ -143,7 +172,7 @@ egne taksonomier, fordi hverken EuroVoc (21 domæner) eller Europa-Parlamentets
 emneklassifikation (9 kapitler) har et digitalt niveau — digitalt er et tværsnit
 af traktatens politikområder og kan derfor ikke hentes som én kategori.
 
-Tre forbehold, der bør stå ved en ekstern brug af siden:
+Fire forbehold, der bør stå ved en ekstern brug af siden:
 
 1. **Links er genereret, ikke verificeret.** CELEX-numrene konstrueres ud fra
    nummer og type. EUR-Lex afviser automatiserede kald, så de er ikke efterprøvet
@@ -152,6 +181,11 @@ Tre forbehold, der bør stå ved en ekstern brug af siden:
    efter 2024 mangler, herunder simplificerings- og omnibus-sagerne fra 2025–26.
 3. **Kategorien er redaktionel.** En retsakt kan sagligt høre i flere kategorier.
    Hver er placeret ét sted, som i kildetabellen.
+4. **Aktsidernes faktalag er næsten tomt.** Anvendelsesdato og dansk
+   implementering er indtil videre kun udfyldt for GDPR og AI-forordningen, hvor
+   de er kontrolleret mod kilderne. De øvrige 102 sider skriver *Ikke
+   registreret* og *Ikke kortlagt endnu* — det betyder "ikke slået op", ikke
+   "findes ikke". Udfyldningen kræver et opslag pr. retsakt.
 
 ## Design
 

@@ -160,6 +160,9 @@ main{padding:38px 0 0}
      padding:18px 0;border-top:1px solid var(--border-1)}
 .act:first-child{border-top:0}
 .act h3{font-size:16.5px;font-weight:600;line-height:1.35;margin:0 0 8px;letter-spacing:-.005em}
+.act h3 a{color:inherit;text-decoration:none}
+.act h3 a:hover{color:var(--dt-poppy)}
+.act h3 a::after{content:"›";color:var(--dt-poppy);font-weight:700;margin-left:7px}
 .refs{display:flex;flex-wrap:wrap;gap:8px}
 .ref{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;
      padding:5px 11px;border-radius:var(--r-pill);text-decoration:none;
@@ -177,20 +180,45 @@ main{padding:38px 0 0}
 .act .catname{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
               color:var(--dt-poppy);margin:0 0 6px}
 
-/* ── opsummering ────────────────────────────────────────── */
-.brief-btn{display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:12.5px;
-           font-weight:600;padding:6px 13px;margin-top:10px;cursor:pointer;
-           border-radius:var(--r-pill);border:1px solid var(--dt-poppy);
-           background:transparent;color:var(--dt-poppy)}
-.brief-btn:hover{background:var(--dt-poppy);color:#fff}
-.brief-btn svg{transition:transform .18s}
-.brief-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+/* ── aktside ────────────────────────────────────────────── */
+/* Hver retsakt har sin egen adresse: #akt/<slug>, fx #akt/gdpr. CELEX virker
+   også som alias, fordi en slug afledt af navnet dør, hvis navnet rettes. */
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding:8px 0 0;font-size:13px}
+.crumbs a{color:var(--dt-poppy);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.crumbs i{font-style:normal;color:var(--fg-muted)}
+.crumbs b{font-weight:500;color:var(--fg-2)}
+
+.act-head{padding:20px 0 26px;border-bottom:1px solid var(--border-1);margin-bottom:26px}
+.act-head .kind{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+                color:var(--dt-poppy);margin:0 0 14px}
+.act-head h1{font-size:clamp(27px,3.6vw,40px);max-width:34ch;margin:0 0 18px}
+.act-head .meta{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+
+/* Faktalaget: det, der bliver spurgt om først. Et manglende felt skrives ud
+   frem for at stå tomt — en tom kasse læses som en fejl på siden. */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+       background:var(--border-1);border:1px solid var(--border-1);
+       border-radius:var(--r-md);overflow:hidden;margin-bottom:30px}
+.fact{background:var(--bg-card);padding:17px 20px 19px}
+.fact h4{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+         color:var(--fg-2);margin:0 0 8px}
+.fact strong{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;
+             font-variant-numeric:tabular-nums}
+.fact .none{font-size:15px;font-weight:400;color:var(--fg-muted)}
+.fact span{display:block;font-size:13px;line-height:1.5;color:var(--fg-2);margin-top:7px}
+
+.notyet{padding:22px 24px;border-radius:var(--r-md);background:var(--bg-soft);
+        font-size:15px;line-height:1.6;color:var(--fg-2);max-width:74ch}
+
+/* ── opsummeringens typografi, nu som sideindhold ───────── */
 .pills{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .badge-brief{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
              color:var(--dt-poppy);white-space:nowrap}
-.brief{grid-column:1/-1;margin:16px 0 4px;padding:24px;border-radius:var(--r-md);
-       background:var(--bg-soft);display:flex;flex-direction:column;gap:22px}
-.brief[hidden]{display:none}
+.brief{display:flex;flex-direction:column;gap:30px}
+/* Sektionsrytme: aktsiden læses som et dokument, ikke som et panel */
+.brief > div{padding-top:26px;border-top:1px solid var(--border-1)}
+.brief > div:first-child{padding-top:0;border-top:0}
 .brief h4{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
           color:var(--fg-2);margin:0 0 9px}
 .brief p{font-size:15px;line-height:1.62;margin:0;max-width:74ch}
@@ -208,10 +236,13 @@ main{padding:38px 0 0}
 .tl span{display:block;color:var(--fg-2);font-size:13.5px;margin-top:2px}
 .tl li.now time,.tl li.now b{color:var(--dt-poppy)}
 .rel{display:flex;flex-wrap:wrap;gap:8px}
-.rel button{font:inherit;font-size:12.5px;padding:5px 12px;cursor:pointer;
-            border-radius:var(--r-pill);border:1px solid var(--border-2);
-            background:var(--bg-card);color:var(--fg-1)}
-.rel button:hover{border-color:var(--dt-poppy);color:var(--dt-poppy)}
+.rel a,.rel em{font-size:12.5px;padding:5px 12px;border-radius:var(--r-pill);
+               border:1px solid var(--border-2);background:var(--bg-card);
+               color:var(--fg-1);text-decoration:none}
+.rel a:hover{border-color:var(--dt-poppy);color:var(--dt-poppy)}
+/* Datasættet stopper i 2024, så et navn kan pege på en retsakt, der ikke er
+   med. Den vises som tekst frem for et link, der ikke fører nogen steder. */
+.rel em{font-style:normal;color:var(--fg-muted);border-style:dashed}
 .auth-list{display:flex;flex-wrap:wrap;gap:10px}
 .auth-chip{display:flex;flex-direction:column;gap:3px;max-width:280px;padding:9px 14px;
            border:1px solid var(--border-2);border-radius:var(--r-md);background:var(--bg-card)}
@@ -285,6 +316,7 @@ footer a{color:#fff}
     </ul>
     <div class="grid" id="grid"></div>
     <div id="detail" class="hidden"></div>
+    <div id="act" class="hidden"></div>
     <div id="results" class="hidden"></div>
   </main>
 </div>
@@ -302,6 +334,7 @@ const LABELS = {law:"Gældende ret", neg:"I forhandling", plan:"Planlagt"};
 const DK_LABELS = {direct:"DK: direkte gældende", transposed:"DK: gennemført", pending:"DK: afventer gennemførelse"};
 const grid = document.getElementById('grid');
 const detail = document.getElementById('detail');
+const actView = document.getElementById('act');
 const results = document.getElementById('results');
 const legend = document.querySelector('.legend');
 const qInput = document.getElementById('q');
@@ -328,7 +361,29 @@ function refsHTML(a){
   return `<div class="refs">${parts.join('')}</div>`;
 }
 
-const CHEV = `<svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6.5 8 10.5 12 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+const MDR = ['januar','februar','marts','april','maj','juni','juli','august',
+             'september','oktober','november','december'];
+// "2018-05-25" -> "25. maj 2018". Datasættets datoer er faste strenge, så der
+// læses frem for at parses. Alt andet — fx "—" — sendes uforandret videre.
+function daDate(d){
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || '');
+  return m ? `${+m[3]}. ${MDR[+m[2] - 1]} ${m[1]}` : (d || '');
+}
+
+const KIND = {R:'Forordning', L:'Direktiv', D:'Afgørelse'};
+// Kort tekst til faktalaget. DK_LABELS er badget i listen, det her er kassen.
+const DK_FACT = {direct:'Gælder direkte', transposed:'Gennemført i dansk lov',
+                 pending:'Afventer gennemførelse'};
+const BASE_TITLE = document.title;
+
+// Opslag pr. adresse. Både slug og hvert CELEX-nummer peger på retsakten: slug
+// er den læsbare adresse, CELEX den, der aldrig ændrer sig, hvis navnet rettes.
+const BY_KEY = new Map();
+all.forEach(a => {
+  BY_KEY.set(a.slug, a);
+  a.refs.forEach(r => BY_KEY.set(r.celex.toLowerCase(), a));
+});
+const BY_NAME = new Map(all.map(a => [a.name, a]));
 
 // Datoer i fremtiden markeres, så det er til at se hvad der endnu ikke gælder.
 // Bygget ud fra dagens dato i browseren — datasættets datoer er faste strenge.
@@ -337,7 +392,7 @@ const today = new Date().toISOString().slice(0, 10);
 function timelineHTML(items){
   return `<ol class="tl">${items.map(t => `
       <li class="${t.date !== '—' && t.date > today ? '' : 'now'}">
-        <time>${esc(t.date)}</time>
+        <time>${esc(daDate(t.date))}</time>
         <div><b>${esc(t.label)}</b>${t.note ? `<span>${esc(t.note)}</span>` : ''}</div>
       </li>`).join('')}</ol>`;
 }
@@ -361,48 +416,107 @@ function dkHTML(dk){
   </div>`;
 }
 
-function briefHTML(s, dk, id){
-  const list = items => `<ul>${items.map(t => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`;
+// ── aktsiden ──────────────────────────────────────────────────────────────
+// Rækkefølgen er det vigtige: identitet, dernæst de spørgsmål der stilles
+// først — gælder det for mig, fra hvornår, hvem fører tilsyn — og til sidst
+// det redaktionelle. Felter uden indhold udelades helt, så en retsakt uden
+// opsummering ikke ser ud som en side, der er gået i stykker.
 
-  return `<div class="brief" id="${id}" hidden>
-    <div><h4>Genstand</h4><p>${esc(s.subject)}</p></div>
-    <div><h4>Anvendelsesområde</h4><p>${esc(s.scope)}</p></div>
-    <div><h4>Kernekrav</h4>${list(s.duties)}</div>
-    <div><h4>Tidslinje</h4>${timelineHTML(s.timeline)}</div>
-    ${dkHTML(dk)}
-    <div class="brief-cols">
-      <div><h4>Tilsyn i Danmark</h4><p>${esc(s.supervision)}</p></div>
-      <div><h4>Sanktioner</h4><p>${esc(s.sanctions)}</p></div>
-    </div>
-    <div><h4>Betydning for et tech-hus</h4>${list(s.note)}</div>
-    ${s.related.length ? `<div><h4>Hænger sammen med</h4>
-      <div class="rel">${s.related.map(r =>
-        `<button type="button" data-find="${esc(r)}">${esc(r)}</button>`).join('')}</div></div>` : ''}
-    <div class="brief-foot">
-      <em>Kontrolleret ${esc(s.reviewed)}</em>
-      ${s.sources.map(q => `<a href="${q.url}" target="_blank" rel="noopener">${esc(q.label)}</a>`).join('')}
-    </div>
-  </div>`;
+function fact(label, value, note){
+  return `<div class="fact"><h4>${label}</h4>${
+    value ? `<strong>${esc(value)}</strong>`
+          : `<strong class="none">Ikke registreret</strong>`
+  }${note ? `<span>${esc(note)}</span>` : ''}</div>`;
 }
 
-let briefSeq = 0;
+function relHTML(names){
+  return `<div class="rel">${names.map(n => {
+    const t = BY_NAME.get(n);
+    // Datasættet stopper i 2024, så et navn kan pege på en retsakt, der ikke er
+    // med endnu. Den vises som tekst frem for et link, der intet steds fører.
+    return t ? `<a href="#akt/${t.slug}">${esc(n)}</a>`
+             : `<em title="Ikke i datasættet — det stopper i 2024">${esc(n)}</em>`;
+  }).join('')}</div>`;
+}
+
+function renderAct(key){
+  const a = BY_KEY.get(decodeURIComponent(key).toLowerCase());
+  if (!a) return show('grid');
+
+  const s = a.summary;
+  const sec  = (h, body) => body ? `<div><h4>${h}</h4>${body}</div>` : '';
+  const para = t => t ? `<p>${esc(t)}</p>` : '';
+  const list = items => items && items.length
+    ? `<ul>${items.map(t => `<li><span>${esc(t)}</span></li>`).join('')}</ul>` : '';
+
+  // Faktalagets dansk-felt er en sammenfatning af dk-objektet; detaljerne —
+  // gennemførelseslov, danske datoer, myndigheder — står i dkHTML nedenfor.
+  const dansk = a.dk
+    ? fact('Dansk implementering', DK_FACT[a.dk.status],
+           a.dk.status === 'transposed' ? a.dk.instrument : null)
+    : fact('Dansk implementering', null, 'Ikke kortlagt endnu.');
+
+  const kilde = a.refs.length ? 'EUR-Lex'
+              : a.proc ? 'Europa-Parlamentets Legislative Observatory' : null;
+
+  actView.innerHTML = `
+    <nav class="crumbs" aria-label="Sti">
+      <a href="#">Alle kategorier</a><i>›</i>
+      <a href="#${a.catKey}">${esc(a.cat)}</a><i>›</i>
+      <b>${esc(a.name)}</b>
+    </nav>
+    <header class="act-head">
+      <p class="kind">${KIND[a.type]}${a.refs.length ? ' · ' + esc(a.refs[0].label) : ''}</p>
+      <h1 id="act-title" tabindex="-1">${esc(a.name)}</h1>
+      <div class="meta">
+        <span class="pill ${a.status}">${LABELS[a.status]}</span>
+        ${a.dk ? `<span class="pill dk">${esc(DK_LABELS[a.dk.status])}</span>` : ''}
+        ${refsHTML(a)}
+      </div>
+    </header>
+    <div class="facts">
+      ${fact('Gælder fra i EU', daDate(a.appliesFrom), a.appliesNote)}
+      ${dansk}
+    </div>
+    <div class="brief">
+      ${dkHTML(a.dk)}
+      ${s ? `${sec('Tilsyn i Danmark', para(s.supervision))}
+      ${sec('Genstand', para(s.subject))}
+      ${sec('Anvendelsesområde', para(s.scope))}
+      ${sec('Kernekrav', list(s.duties))}
+      ${sec('Tidslinje i EU', timelineHTML(s.timeline))}
+      ${sec('Sanktioner', para(s.sanctions))}
+      ${sec('Betydning for et tech-hus', list(s.note))}
+      ${sec('Hænger sammen med', s.related.length ? relHTML(s.related) : '')}
+      <div class="brief-foot">
+        <em>Kontrolleret ${esc(daDate(s.reviewed))}</em>
+        ${s.sources.map(q =>
+          `<a href="${q.url}" target="_blank" rel="noopener">${esc(q.label)}</a>`).join('')}
+      </div>`
+      : `<div><p class="notyet">Denne retsakt er endnu ikke uddybet. ${kilde
+          ? `Referencen ovenfor fører til den autoritative tekst i ${kilde}.`
+          : 'Initiativet er varslet af Kommissionen, men der findes endnu ikke et forslag at henvise til.'
+        }</p></div>`}
+    </div>`;
+
+  document.title = `${a.name} — ${BASE_TITLE}`;
+  show('act');
+  window.scrollTo(0, 0);
+  document.getElementById('act-title').focus();
+}
 
 function actHTML(a, withCat){
-  const id = a.summary ? `brief-${++briefSeq}` : null;
   return `<li class="act">
     <div>
       ${withCat ? `<p class="catname">${esc(a.cat)}</p>` : ''}
-      <h3>${esc(a.name)}</h3>
+      <h3><a href="#akt/${a.slug}">${esc(a.name)}</a></h3>
       ${refsHTML(a)}
-      ${a.summary ? `<button class="brief-btn" type="button" aria-expanded="false"
-         aria-controls="${id}" data-brief="${id}">Opsummering${CHEV}</button>` : ''}
     </div>
     <span class="pills">
       <span class="pill ${a.status}">${LABELS[a.status]}</span>
       ${a.summary ? `<span class="badge-brief">Uddybet</span>` : ''}
       ${a.dk ? `<span class="pill dk">${esc(DK_LABELS[a.dk.status])}</span>` : ''}
     </span>
-    ${a.summary ? briefHTML(a.summary, a.dk, id) : ''}
   </li>`;
 }
 
@@ -434,6 +548,7 @@ function renderDetail(key){
       : `<p class="empty">Ingen retsakter med den valgte status i denne kategori.</p>`}`;
   document.getElementById('back').addEventListener('click', () => { location.hash = ''; });
   show('detail');
+  window.scrollTo(0, 0);
 }
 
 function renderSearch(q){
@@ -454,14 +569,17 @@ function show(which){
   grid.classList.toggle('hidden', which !== 'grid');
   legend.classList.toggle('hidden', which !== 'grid');
   detail.classList.toggle('hidden', which !== 'detail');
+  actView.classList.toggle('hidden', which !== 'act');
   results.classList.toggle('hidden', which !== 'results');
 }
 
 function route(){
+  document.title = BASE_TITLE;
   const q = qInput.value.trim();
   if (q) return renderSearch(q);
-  const key = location.hash.replace(/^#/, '');
-  if (key) return renderDetail(key);
+  const hash = location.hash.replace(/^#/, '');
+  if (hash.startsWith('akt/')) return renderAct(hash.slice(4));
+  if (hash) return renderDetail(hash);
   show('grid');
 }
 
@@ -470,21 +588,12 @@ grid.addEventListener('click', e => {
   if (b) location.hash = b.dataset.cat;
 });
 qInput.addEventListener('input', route);
-window.addEventListener('hashchange', route);
-document.body.addEventListener('click', e => {
-  const briefBtn = e.target.closest('.brief-btn');
-  if (briefBtn) {
-    const panel = document.getElementById(briefBtn.dataset.brief);
-    const open = briefBtn.getAttribute('aria-expanded') === 'true';
-    briefBtn.setAttribute('aria-expanded', String(!open));
-    panel.hidden = open;
-    return;
-  }
-  const findBtn = e.target.closest('[data-find]');
-  if (findBtn) {
-    qInput.value = findBtn.dataset.find;
-    route();
-  }
+window.addEventListener('hashchange', () => {
+  // Et hash-skift er en navigation, og søgefeltet har forrang i route(). Uden
+  // dette kunne man ikke klikke på et søgeresultat: søgningen ville vinde over
+  // den aktside, klikket netop bad om.
+  if (location.hash.replace(/^#/, '') && qInput.value) qInput.value = '';
+  route();
 });
 document.querySelectorAll('.chip').forEach(btn => {
   btn.addEventListener('click', () => {

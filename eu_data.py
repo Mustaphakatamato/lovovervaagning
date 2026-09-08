@@ -3,6 +3,8 @@
 # t = retsakt-type til CELEX-opslag: R=forordning, L=direktiv, D=afgørelse
 # s = status: law (gældende) | neg (i forhandling) | plan (planlagt initiativ)
 # ref = [(år, nummer)] for vedtagne retsakter | proc = procedurenummer
+# app/appn = EU-anvendelsesdato og forbehold, når datoerne er trappede
+import re
 
 CATS = [
  ("research", "Research & Innovation", "Programmer og instrumenter der finansierer digital forskning og udvikling."),
@@ -49,7 +51,8 @@ ACTS = {
  dict(n="Telecoms Act / Fair Share initiative", t="R", s="plan"),
 ],
 "data": [
- dict(n="General Data Protection Regulation (GDPR)", t="R", s="law", ref=[(2016,679)]),
+ dict(n="General Data Protection Regulation (GDPR)", t="R", s="law", ref=[(2016,679)],
+      app="2018-05-25"),
  dict(n="Regulation on the protection of personal data processed by EU institutions, bodies, offices and agencies", t="R", s="law", ref=[(2018,1725)]),
  dict(n="Regulation on the free flow of non-personal data", t="R", s="law", ref=[(2018,1807)]),
  dict(n="Open Data Directive (PSI)", t="L", s="law", ref=[(2019,1024)]),
@@ -97,7 +100,8 @@ ACTS = {
  dict(n="Regulation establishing a Single Digital Gateway", t="R", s="law", ref=[(2018,1724)]),
  dict(n="General Product Safety Regulation", t="R", s="law", ref=[(2023,988)]),
  dict(n="Machinery Regulation", t="R", s="law", ref=[(2023,1230)]),
- dict(n="AI Act", t="R", s="law", ref=[(2024,1689)], proc="2021/0106(COD)"),
+ dict(n="AI Act", t="R", s="law", ref=[(2024,1689)], proc="2021/0106(COD)",
+      app="2025-02-02", appn="Trappet. Forbud fra 2. februar 2025, transparens fra 2. august 2026, høj risiko fra 2. december 2027. Se tidslinjen."),
  dict(n="Eco-design Regulation", t="R", s="neg", proc="2022/0095(COD)"),
  dict(n="AI Liability Directive", t="L", s="neg", proc="2022/0303(COD)"),
 ],
@@ -150,6 +154,16 @@ ACTS = {
 ],
 }
 
+def slug(name):
+    """Adressen til #akt/<slug>. Spejler slug() i 0004_slug_and_applies.sql.
+
+    Slutter navnet på en parentes, er indholdet en forkortelse, og den er den
+    adresse et menneske ville skrive: (GDPR) -> gdpr, (RSPP 2.0) -> rspp-2-0.
+    Ellers kebab-case af hele navnet.
+    """
+    m = re.search(r"\(([^()]+)\)\s*$", name)
+    return re.sub(r"[^a-z0-9]+", "-", (m.group(1) if m else name).lower()).strip("-")
+
 def celex(t, year, num):
     """CELEX-nummer: sektor 3 + år + type-bogstav + 4-cifret nummer."""
     return f"3{year}{t}{num:04d}"
@@ -189,8 +203,12 @@ def build():
             # retsakten har fået en fuld konsulentopsummering.
             dk_status = s.get("dk_status", "unmapped") if s else "unmapped"
             items.append({
-                "name": a["n"], "type": a["t"], "status": a["s"], "refs": refs,
+                "name": a["n"], "slug": slug(a["n"]), "type": a["t"], "status": a["s"],
+                "refs": refs,
                 "proc": a.get("proc"), "procUrl": oeil_url(a["proc"]) if a.get("proc") else None,
+                # EU-anvendelsesdato. Et andet spørgsmål end dk nedenfor: hvornår
+                # retsakten gælder i EU, ikke hvad Danmark har gjort ved den.
+                "appliesFrom": a.get("app"), "appliesNote": a.get("appn"),
                 "summary": {
                     "subject": s["subject"], "scope": s["scope"], "duties": s["duties"],
                     "timeline": s["timeline"], "supervision": s["supervision_dk"],

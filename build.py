@@ -110,6 +110,7 @@ def canonical(data):
             "acts": [
                 {
                     "name": a["name"],
+                    "slug": a["slug"],
                     "type": a["type"],
                     "status": a["status"],
                     "refs": [
@@ -118,6 +119,8 @@ def canonical(data):
                     ],
                     "proc": a["proc"],
                     "procUrl": a["procUrl"],
+                    "appliesFrom": a["appliesFrom"],
+                    "appliesNote": a["appliesNote"],
                     "summary": _summary(a.get("summary")),
                     "dk": _dk(a.get("dk")),
                 }
@@ -126,6 +129,37 @@ def canonical(data):
         }
         for c in data
     ]
+
+
+def check(data):
+    """Kontrollerer det, en aktside pr. retsakt gør farligt at få forkert.
+
+    Slugs bliver adresser. To retsakter med samme slug ville sende læseren til
+    den samme side, uden at noget så galt ud — derfor afbrydes byggeriet.
+    Uopklarede related-navne er derimod et legitimt hul: datasættet stopper i
+    2024, så et navn kan pege på en retsakt, der ikke er med endnu. De vises som
+    ren tekst på siden og rapporteres her, så hullet er synligt frem for stille.
+    """
+    acts = [a for c in data for a in c["acts"]]
+
+    seen = {}
+    for a in acts:
+        if a["slug"] in seen:
+            raise SystemExit(
+                f"slug-kollision: {a['slug']!r} bruges af både "
+                f"{seen[a['slug']]!r} og {a['name']!r} — omdøb den ene"
+            )
+        seen[a["slug"]] = a["name"]
+
+    names = {a["name"] for a in acts}
+    unresolved = sorted({
+        r for a in acts if a["summary"]
+        for r in a["summary"]["related"] if r not in names
+    })
+    if unresolved:
+        print(f"related uden retsakt i datasættet ({len(unresolved)}): "
+              + ", ".join(unresolved))
+    return len(acts)
 
 
 def load(mode: str):
@@ -149,6 +183,7 @@ def main():
     args = sys.argv[1:]
     mode = "db" if "--db" in args else "local" if "--local" in args else "auto"
     data = canonical(load(mode))
+    n_acts = check(data)
 
     body = TEMPLATE.read_text(encoding="utf-8")
     body = body.replace(f"<title>{TITLE}</title>\n", "", 1)
@@ -179,8 +214,8 @@ def main():
         encoding="utf-8",
     )
 
-    acts = sum(len(c["acts"]) for c in data)
-    print(f"index.html bygget — {len(data)} kategorier, {acts} retsakter")
+    print(f"index.html bygget — {len(data)} kategorier, {n_acts} retsakter, "
+          f"{n_acts} aktsider")
 
 
 if __name__ == "__main__":
