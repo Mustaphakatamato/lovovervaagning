@@ -191,5 +191,15 @@ Fire forbehold, der bør stå ved en ekstern brug af siden:
 
 Devoteams designsystem: Montserrat i alle størrelser, Red Poppy `#f8485e` alene
 som accent, Dark Grey `#3c3c3a` til al tekst — aldrig sort. Status vises på
-brandets Red Poppy-intensitetsskala frem for flere kulører. Siden har både lys og
-mørk tilstand og følger systemets tema.
+brandets Red Poppy-intensitetsskala frem for flere kulører.
+
+Siden har både lys og mørk tilstand. Knappen i topbjælken skifter, og valget
+gemmes i `localStorage`. Uden et gemt valg følges systemets tema — også hvis
+maskinen skifter midt i en session; når læseren selv har valgt, vinder valget.
+
+Temaet sættes af et lille script i `<head>`-enden, før resten af siden parses.
+Det står bevidst adskilt fra resten af JavaScriptet: kørte det nederst, ville
+den forkerte tilstand blinke, hver gang et gemt valg afveg fra systemets.
+`localStorage` kan kaste på `file://` og i privat browsing, så opslaget er
+pakket i try/catch — siden skal kunne virke som en løs fil, og et manglende
+gemmested må ikke vælte temaet.
