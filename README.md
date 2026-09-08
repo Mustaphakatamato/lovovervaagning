@@ -5,7 +5,9 @@ inddelt i tolv kategorier. Klik en kategori for at se hver forordning, hvert
 direktiv og hver afgørelse — og klik en retsakt for at få dens egen side med
 anvendelsesdato, dansk implementering, tilsyn og link til teksten i EUR-Lex.
 
-**104 retsakter** — 68 gældende, 27 i forhandling, 9 planlagte initiativer.
+**104 retsakter** — 88 gældende, 5 i forhandling, 8 planlagte initiativer og 3
+forslag, Kommissionen har trukket tilbage. Statusserne er kontrolleret mod
+Europa-Parlamentets Legislative Observatory 8. september 2026.
 
 ## Kom i gang
 
@@ -153,7 +155,10 @@ dict(n="NIS 2 Directive",      t="L", s="law", ref=[(2022, 2555)]),
 ```
 
 - `t` — retsakt-type til CELEX-opslaget: `R` forordning, `L` direktiv, `D` afgørelse
-- `s` — status: `law` gældende ret, `neg` i forhandling, `plan` planlagt initiativ
+- `s` — status: `law` gældende ret, `neg` i forhandling, `plan` planlagt initiativ,
+  `withdrawn` forslaget trukket tilbage af Kommissionen
+- `sn` — forbehold til statussen, fx datoen for en tilbagetrækning. Vises under
+  statuspillen på aktsiden
 - `ref` — `[(år, nummer)]` for vedtagne retsakter; giver et EUR-Lex-link
 - `proc` — procedurenummer; giver et link til Europa-Parlamentets Legislative Observatory
 - `app` / `appn` — EU-anvendelsesdato som `ÅÅÅÅ-MM-DD`, og et forbehold når
@@ -177,8 +182,14 @@ Fire forbehold, der bør stå ved en ekstern brug af siden:
 1. **Links er genereret, ikke verificeret.** CELEX-numrene konstrueres ud fra
    nummer og type. EUR-Lex afviser automatiserede kald, så de er ikke efterprøvet
    maskinelt. Kontrollér et link, før det citeres — særligt de ældste retsakter.
-2. **Datasættet stopper i 2024.** Kildetabellen er et snapshot. Retsakter vedtaget
-   efter 2024 mangler, herunder simplificerings- og omnibus-sagerne fra 2025–26.
+2. **Udvalget stopper i 2024 — statusserne gør ikke.** Hver retsakts status er
+   slået op i Legislative Observatory 8. september 2026, så det, der står i
+   datasættet, er gældende ret, forhandling, plan eller tilbagetrukket som af
+   den dato. Men *udvalget* af retsakter stammer fra kildetabellens snapshot,
+   så sager, der aldrig har stået i den, mangler fortsat — herunder Digital
+   Omnibus, Cloud and AI Development Act og Digital Networks Act.
+   Kontroldatoen står i sidens fodnote og skal rettes, når statusserne
+   gennemgås igen.
 3. **Kategorien er redaktionel.** En retsakt kan sagligt høre i flere kategorier.
    Hver er placeret ét sted, som i kildetabellen.
 4. **Aktsidernes faktalag er næsten tomt.** Anvendelsesdato og dansk

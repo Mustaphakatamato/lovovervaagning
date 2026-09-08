@@ -146,6 +146,7 @@ main{padding:38px 0 0}
 .bar .b-law{background:var(--dt-grey)}
 .bar .b-neg{background:var(--dt-poppy)}
 .bar .b-plan{background:var(--dt-poppy-light)}
+.bar .b-withdrawn{background:var(--border-2)}
 @media (prefers-color-scheme:dark){.bar .b-law{background:#8f8d89}}
 :root[data-theme="dark"] .bar .b-law{background:#8f8d89}
 :root[data-theme="light"] .bar .b-law{background:var(--dt-grey)}
@@ -156,6 +157,7 @@ main{padding:38px 0 0}
 .dot.law{background:var(--dt-grey)}
 .dot.neg{background:var(--dt-poppy)}
 .dot.plan{background:var(--dt-poppy-light)}
+.dot.withdrawn{background:var(--border-2)}
 @media (prefers-color-scheme:dark){.dot.law{background:#8f8d89}}
 :root[data-theme="dark"] .dot.law{background:#8f8d89}
 :root[data-theme="light"] .dot.law{background:var(--dt-grey)}
@@ -190,6 +192,10 @@ main{padding:38px 0 0}
 .pill.law{background:var(--dt-lightgrey);color:var(--fg-1);border-color:var(--border-2)}
 .pill.neg{background:var(--dt-poppy-lighter);color:var(--fg-1);border-color:var(--dt-poppy-light)}
 .pill.plan{background:transparent;color:var(--fg-2);border-color:var(--border-2);border-style:dashed}
+/* Trukket tilbage: gennemstreget, fordi det ikke er en fase på vej mod
+   vedtagelse — det er en sag, der er stoppet. */
+.pill.withdrawn{background:transparent;color:var(--fg-muted);border-color:var(--border-2);
+                text-decoration:line-through}
 .pill.dk{background:transparent;color:var(--fg-2);border-color:var(--border-2)}
 .act .catname{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
               color:var(--dt-poppy);margin:0 0 6px}
@@ -208,6 +214,10 @@ main{padding:38px 0 0}
                 color:var(--dt-poppy);margin:0 0 14px}
 .act-head h1{font-size:clamp(27px,3.6vw,40px);max-width:34ch;margin:0 0 18px}
 .act-head .meta{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+/* Hvorfor statussen er som den er — fx hvornår forslaget blev trukket
+   tilbage. Står ved pillen, fordi det er pillen den tager forbehold for. */
+.act-head .statusnote{font-size:14px;line-height:1.55;color:var(--fg-2);
+                      max-width:74ch;margin:16px 0 0}
 
 /* Faktalaget: det, der bliver spurgt om først. Et manglende felt skrives ud
    frem for at stå tomt — en tom kasse læses som en fejl på siden. */
@@ -350,6 +360,7 @@ footer a{color:#fff}
       <button class="chip" type="button" data-status="law" aria-pressed="false">Gældende ret</button>
       <button class="chip" type="button" data-status="neg" aria-pressed="false">I forhandling</button>
       <button class="chip" type="button" data-status="plan" aria-pressed="false">Planlagt</button>
+      <button class="chip" type="button" data-status="withdrawn" aria-pressed="false">Trukket tilbage</button>
     </div>
   </div>
 </div>
@@ -360,6 +371,7 @@ footer a{color:#fff}
       <li><span class="dot law"></span>Gældende ret — offentliggjort i EU-Tidende</li>
       <li><span class="dot neg"></span>I forhandling — forslag i lovgivningsprocessen</li>
       <li><span class="dot plan"></span>Planlagt initiativ — varslet af Kommissionen</li>
+      <li><span class="dot withdrawn"></span>Trukket tilbage — forslaget er opgivet af Kommissionen</li>
     </ul>
     <div class="grid" id="grid"></div>
     <div id="detail" class="hidden"></div>
@@ -377,7 +389,8 @@ footer a{color:#fff}
 
 <script>
 const DATA = __DATA__;
-const LABELS = {law:"Gældende ret", neg:"I forhandling", plan:"Planlagt"};
+const LABELS = {law:"Gældende ret", neg:"I forhandling", plan:"Planlagt",
+                withdrawn:"Trukket tilbage"};
 const DK_LABELS = {direct:"DK: direkte gældende", transposed:"DK: gennemført", pending:"DK: afventer gennemførelse"};
 const grid = document.getElementById('grid');
 const detail = document.getElementById('detail');
@@ -402,7 +415,9 @@ function updateStats(){
 document.getElementById('foot').innerHTML =
   'Kategoriinddelingen følger Bruegel og kaizenner.eu, <em>Overview of EU Legislation in the Digital Sector</em>. ' +
   'Referencer og CELEX-numre er genereret ud fra retsakternes nummer og type — kontrollér et link, før det citeres. ' +
-  'Retsakter vedtaget efter 2024 er ikke med. Kilder: EUR-Lex og Europa-Parlamentets Legislative Observatory.';
+  'Statusserne er kontrolleret mod Legislative Observatory 8. september 2026. ' +
+  'Udvalget af retsakter stammer fra et snapshot fra 2024, så retsakter, der aldrig har stået i kildetabellen, mangler fortsat. ' +
+  'Kilder: EUR-Lex og Europa-Parlamentets Legislative Observatory.';
 
 const esc = s => s.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
 
@@ -526,6 +541,7 @@ function renderAct(key){
         ${a.dk ? `<span class="pill dk">${esc(DK_LABELS[a.dk.status])}</span>` : ''}
         ${refsHTML(a)}
       </div>
+      ${a.statusNote ? `<p class="statusnote">${esc(a.statusNote)}</p>` : ''}
     </header>
     <div class="facts">
       ${fact('Gælder fra i EU', daDate(a.appliesFrom), a.appliesNote)}
@@ -578,7 +594,7 @@ function renderGrid(){
   // et resultat, og en række nuller gør det svært at se, hvor der faktisk er
   // noget — filteret skal vise det filtrerede, ikke datasættet med huller.
   const kort = DATA.map(c => {
-    const n = {law:0, neg:0, plan:0};
+    const n = {law:0, neg:0, plan:0, withdrawn:0};
     c.acts.forEach(a => n[a.status]++);
     const t = c.acts.length;
     const vist = status ? n[status] : t;
@@ -589,7 +605,8 @@ function renderGrid(){
     return `<button class="cat" type="button" data-cat="${c.key}">
       <span class="cat-top"><span class="cat-title">${esc(c.name)}</span><span class="n">${vist}</span></span>
       <span class="cat-desc">${esc(c.desc)}</span>
-      <span class="bar">${status ? seg(status) : seg('law') + seg('neg') + seg('plan')}</span>
+      <span class="bar">${status ? seg(status)
+        : seg('law') + seg('neg') + seg('plan') + seg('withdrawn')}</span>
     </button>`;
   }).filter(Boolean);
 

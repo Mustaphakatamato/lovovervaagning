@@ -57,13 +57,15 @@ def main():
         for order, a in enumerate(ACTS[key], start=1):
             n_acts += 1
             stmts.append(
-                f"insert into acts (category_key, name, act_type, status, procedure_ref, "
-                f"applies_from, applies_note, sort_order) "
-                f"values ({lit(key)}, {lit(a['n'])}, {lit(a['t'])}, {lit(a['s'])}, "
+                f"insert into acts (category_key, name, act_type, status, status_note, "
+                f"procedure_ref, applies_from, applies_note, sort_order) "
+                f"values ({lit(key)}, {lit(a['n'])}, {lit(a['t'])}, {lit(a['s'])}::act_status, "
+                f"{lit(a.get('sn'))}, "
                 f"{lit(a.get('proc'))}, {lit(a.get('app'))}::date, {lit(a.get('appn'))}, "
                 f"{order}) "
                 f"on conflict (category_key, name) do update set "
                 f"act_type = excluded.act_type, status = excluded.status, "
+                f"status_note = excluded.status_note, "
                 f"procedure_ref = excluded.procedure_ref, "
                 f"applies_from = excluded.applies_from, "
                 f"applies_note = excluded.applies_note, "

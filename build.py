@@ -113,6 +113,7 @@ def canonical(data):
                     "slug": a["slug"],
                     "type": a["type"],
                     "status": a["status"],
+                    "statusNote": a["statusNote"],
                     "refs": [
                         {"label": r["label"], "celex": r["celex"], "url": r["url"]}
                         for r in a["refs"]

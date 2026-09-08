@@ -2,8 +2,10 @@
 # Kilde: Bruegel / kaizenner.eu "Overview of EU Legislation in the Digital Sector".
 # t = retsakt-type til CELEX-opslag: R=forordning, L=direktiv, D=afgørelse
 # s = status: law (gældende) | neg (i forhandling) | plan (planlagt initiativ)
+#            | withdrawn (forslaget trukket tilbage af Kommissionen)
 # ref = [(år, nummer)] for vedtagne retsakter | proc = procedurenummer
 # app/appn = EU-anvendelsesdato og forbehold, når datoerne er trappede
+# sn = forbehold til statussen, fx dato for tilbagetrækning
 import re
 
 CATS = [
@@ -34,9 +36,9 @@ ACTS = {
  dict(n="Regulation on the High Performance Computing Joint Undertaking", t="R", s="law", ref=[(2021,1173)]),
  dict(n="Regulation on Joint Undertakings under Horizon Europe", t="R", s="law", ref=[(2021,2085)], proc="2022/0033(NLE)"),
  dict(n="Decision on a path to the Digital Decade", t="D", s="law", ref=[(2022,2481)]),
- dict(n="European Chips Act", t="R", s="neg", proc="2022/0032(COD)"),
- dict(n="European Critical Raw Materials Act", t="R", s="neg", proc="2023/0079(COD)"),
- dict(n="Strategic Technologies for Europe Platform (STEP)", t="R", s="neg", proc="2023/0199(COD)"),
+ dict(n="European Chips Act", t="R", s="law", ref=[(2023,1781)], proc="2022/0032(COD)"),
+ dict(n="European Critical Raw Materials Act", t="R", s="law", ref=[(2024,1252)], proc="2023/0079(COD)"),
+ dict(n="Strategic Technologies for Europe Platform (STEP)", t="R", s="law", ref=[(2024,795)], proc="2023/0199(COD)"),
 ],
 "connectivity": [
  dict(n="Frequency Bands Directive", t="L", s="law", ref=[(1987,372)]),
@@ -57,12 +59,13 @@ ACTS = {
  dict(n="Regulation on the free flow of non-personal data", t="R", s="law", ref=[(2018,1807)]),
  dict(n="Open Data Directive (PSI)", t="L", s="law", ref=[(2019,1024)]),
  dict(n="Data Governance Act (DGA)", t="R", s="law", ref=[(2022,868)]),
- dict(n="ePrivacy Regulation", t="R", s="neg", proc="2017/0003(COD)"),
- dict(n="European Data Act", t="R", s="neg", proc="2022/0047(COD)"),
- dict(n="European Health Data Space", t="R", s="neg", proc="2022/0140(COD)"),
- dict(n="Regulation on data collection and sharing for short-term rental", t="R", s="neg", proc="2022/0358(COD)"),
- dict(n="Harmonisation of GDPR enforcement", t="R", s="neg", proc="2023/0202(COD)"),
- dict(n="Interoperable Europe Act", t="R", s="neg", proc="2022/0379(COD)"),
+ dict(n="ePrivacy Regulation", t="R", s="withdrawn", proc="2017/0003(COD)",
+      sn="Forslaget trukket tilbage af Kommissionen 6. oktober 2025."),
+ dict(n="European Data Act", t="R", s="law", ref=[(2023,2854)], proc="2022/0047(COD)"),
+ dict(n="European Health Data Space", t="R", s="law", ref=[(2025,327)], proc="2022/0140(COD)"),
+ dict(n="Regulation on data collection and sharing for short-term rental", t="R", s="law", ref=[(2024,1028)], proc="2022/0358(COD)"),
+ dict(n="Harmonisation of GDPR enforcement", t="R", s="law", ref=[(2025,2518)], proc="2023/0202(COD)"),
+ dict(n="Interoperable Europe Act", t="R", s="law", ref=[(2024,903)], proc="2022/0379(COD)"),
  dict(n="Access to vehicle data, functions and resources", t="R", s="plan"),
  dict(n="GreenData4All", t="R", s="plan"),
 ],
@@ -71,26 +74,27 @@ ACTS = {
  dict(n="Community Design Regulation", t="R", s="law", ref=[(2002,6)], proc="2022/0391(COD)"),
  dict(n="Enforcement Directive (IPR)", t="L", s="law", ref=[(2004,48)]),
  dict(n="Directive on the protection of trade secrets", t="L", s="law", ref=[(2016,943)]),
- dict(n="Standard essential patents", t="R", s="neg", proc="2023/0133(COD)"),
- dict(n="Design Directive", t="L", s="neg", proc="2022/0392(COD)"),
- dict(n="Compulsory licensing of patents", t="R", s="neg", proc="2023/0129(COD)"),
+ dict(n="Standard essential patents", t="R", s="withdrawn", proc="2023/0133(COD)",
+      sn="Forslaget trukket tilbage af Kommissionen i oktober 2025. Europa-Parlamentet har indbragt tilbagetrækningen for EU-Domstolen, så sagen er ikke endeligt afsluttet."),
+ dict(n="Design Directive", t="L", s="law", ref=[(2024,2823)], proc="2022/0392(COD)"),
+ dict(n="Compulsory licensing of patents", t="R", s="law", ref=[(2025,2645)], proc="2023/0129(COD)"),
 ],
 "cyber": [
  dict(n="Cybersecurity Act", t="R", s="law", ref=[(2019,881)]),
  dict(n="Regulation establishing the European Cybersecurity Competence Centre", t="R", s="law", ref=[(2021,887)]),
  dict(n="NIS 2 Directive", t="L", s="law", ref=[(2022,2555)]),
  dict(n="Information Security Regulation", t="R", s="neg", proc="2022/0084(COD)"),
- dict(n="Cybersecurity Regulation", t="R", s="neg", proc="2022/0085(COD)"),
- dict(n="Cyber Resilience Act", t="R", s="neg", proc="2022/0272(COD)"),
- dict(n="Cyber Solidarity Act", t="R", s="neg", proc="2023/0109(COD)"),
+ dict(n="Cybersecurity Regulation", t="R", s="law", ref=[(2023,2841)], proc="2022/0085(COD)"),
+ dict(n="Cyber Resilience Act", t="R", s="law", ref=[(2024,2847)], proc="2022/0272(COD)"),
+ dict(n="Cyber Solidarity Act", t="R", s="law", ref=[(2025,38)], proc="2023/0109(COD)"),
 ],
 "law": [
  dict(n="Law Enforcement Directive", t="L", s="law", ref=[(2016,680)]),
  dict(n="Directive on combating fraud and counterfeiting of non-cash means of payment", t="L", s="law", ref=[(2019,713)]),
  dict(n="Regulation on addressing the dissemination of terrorist content online", t="R", s="law", ref=[(2021,784)]),
  dict(n="Temporary CSAM Regulation", t="R", s="law", ref=[(2021,1232)], proc="2022/0155(COD)"),
- dict(n="E-evidence Regulation", t="R", s="neg", proc="2018/0108(COD)"),
- dict(n="Digitalisation of travel documents", t="R", s="plan"),
+ dict(n="E-evidence Regulation", t="R", s="law", ref=[(2023,1543)], proc="2018/0108(COD)"),
+ dict(n="Digitalisation of travel documents", t="R", s="neg", proc="2024/0670(COD)"),
 ],
 "trust": [
  dict(n="Product Liability Directive (PLD)", t="L", s="law", ref=[(1985,374)], proc="2022/0302(COD)"),
@@ -102,8 +106,9 @@ ACTS = {
  dict(n="Machinery Regulation", t="R", s="law", ref=[(2023,1230)]),
  dict(n="AI Act", t="R", s="law", ref=[(2024,1689)], proc="2021/0106(COD)",
       app="2025-02-02", appn="Trappet. Forbud fra 2. februar 2025, transparens fra 2. august 2026, høj risiko fra 2. december 2027. Se tidslinjen."),
- dict(n="Eco-design Regulation", t="R", s="neg", proc="2022/0095(COD)"),
- dict(n="AI Liability Directive", t="L", s="neg", proc="2022/0303(COD)"),
+ dict(n="Eco-design Regulation", t="R", s="law", ref=[(2024,1781)], proc="2022/0095(COD)"),
+ dict(n="AI Liability Directive", t="L", s="withdrawn", proc="2022/0303(COD)",
+      sn="Forslaget trukket tilbage af Kommissionen 6. oktober 2025."),
 ],
 "ecom": [
  dict(n="Unfair Contract Terms Directive (UCTD)", t="L", s="law", ref=[(1993,13)]),
@@ -115,8 +120,8 @@ ACTS = {
  dict(n="Digital Content Directive", t="L", s="law", ref=[(2019,770)]),
  dict(n="Directive on certain aspects concerning contracts for the sale of goods", t="L", s="law", ref=[(2019,771)]),
  dict(n="Digital Services Act (DSA)", t="R", s="law", ref=[(2022,2065)]),
- dict(n="Political Advertising Regulation", t="R", s="neg", proc="2021/0381(COD)"),
- dict(n="Right to Repair Directive", t="L", s="neg", proc="2023/0083(COD)"),
+ dict(n="Political Advertising Regulation", t="R", s="law", ref=[(2024,900)], proc="2021/0381(COD)"),
+ dict(n="Right to Repair Directive", t="L", s="law", ref=[(2024,1799)], proc="2023/0083(COD)"),
  dict(n="Multimodal digital mobility services (MDMS)", t="R", s="plan"),
  dict(n="Consumer protection: strengthened enforcement cooperation", t="R", s="plan"),
  dict(n="Consumer rights: adapting ADR to digital markets", t="L", s="plan"),
@@ -130,8 +135,8 @@ ACTS = {
  dict(n="Digital Markets Act (DMA)", t="R", s="law", ref=[(2022,1925)]),
  dict(n="Regulation on foreign subsidies distorting the internal market", t="R", s="law", ref=[(2022,2560)]),
  dict(n="Horizontal Block Exemption Regulations (HBER)", t="R", s="law", ref=[(2023,1066),(2023,1067)]),
- dict(n="Platform Work Directive", t="L", s="neg", proc="2021/0414(COD)"),
- dict(n="Single Market Emergency Instrument (SMEI)", t="R", s="neg", proc="2022/0278(COD)"),
+ dict(n="Platform Work Directive", t="L", s="law", ref=[(2024,2831)], proc="2021/0414(COD)"),
+ dict(n="Single Market Emergency Instrument (SMEI)", t="R", s="law", ref=[(2024,2747)], proc="2022/0278(COD)"),
 ],
 "media": [
  dict(n="Satellite and Cable I Directive", t="L", s="law", ref=[(1993,83)]),
@@ -140,7 +145,7 @@ ACTS = {
  dict(n="Portability Regulation", t="R", s="law", ref=[(2017,1128)]),
  dict(n="Satellite and Cable II Directive", t="L", s="law", ref=[(2019,789)]),
  dict(n="Copyright Directive (DSM)", t="L", s="law", ref=[(2019,790)]),
- dict(n="European Media Freedom Act", t="R", s="neg", proc="2022/0277(COD)"),
+ dict(n="European Media Freedom Act", t="R", s="law", ref=[(2024,1083)], proc="2022/0277(COD)"),
 ],
 "finance": [
  dict(n="Common VAT system Directive", t="L", s="law", ref=[(2006,112)], proc="2022/0407(CNS)"),
@@ -204,6 +209,7 @@ def build():
             dk_status = s.get("dk_status", "unmapped") if s else "unmapped"
             items.append({
                 "name": a["n"], "slug": slug(a["n"]), "type": a["t"], "status": a["s"],
+                "statusNote": a.get("sn"),
                 "refs": refs,
                 "proc": a.get("proc"), "procUrl": oeil_url(a["proc"]) if a.get("proc") else None,
                 # EU-anvendelsesdato. Et andet spørgsmål end dk nedenfor: hvornår

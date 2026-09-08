@@ -9,6 +9,7 @@
     "slug": "digital-europe-programme-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/694",
@@ -28,6 +29,7 @@
     "slug": "horizon-europe-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/695",
@@ -52,6 +54,7 @@
     "slug": "regulation-on-a-pilot-regime-for-distributed-ledger-technology-market-infrastructures",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/858",
@@ -78,6 +81,7 @@
     "slug": "recovery-and-resilience-facility-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/241",
@@ -97,6 +101,7 @@
     "slug": "investeu-programme-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/523",
@@ -116,6 +121,7 @@
     "slug": "connecting-europe-facility-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/1153",
@@ -135,6 +141,7 @@
     "slug": "regulation-on-the-high-performance-computing-joint-undertaking",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/1173",
@@ -154,6 +161,7 @@
     "slug": "regulation-on-joint-undertakings-under-horizon-europe",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/2085",
@@ -173,6 +181,7 @@
     "slug": "decision-on-a-path-to-the-digital-decade",
     "type": "D",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Decision (EU) 2022/2481",
@@ -191,8 +200,15 @@
     "name": "European Chips Act",
     "slug": "european-chips-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/1781",
+      "celex": "32023R1781",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R1781"
+     }
+    ],
     "proc": "2022/0032(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0032(COD)",
     "appliesFrom": null,
@@ -204,8 +220,15 @@
     "name": "European Critical Raw Materials Act",
     "slug": "european-critical-raw-materials-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/1252",
+      "celex": "32024R1252",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R1252"
+     }
+    ],
     "proc": "2023/0079(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0079(COD)",
     "appliesFrom": null,
@@ -217,8 +240,15 @@
     "name": "Strategic Technologies for Europe Platform (STEP)",
     "slug": "step",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/795",
+      "celex": "32024R0795",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R0795"
+     }
+    ],
     "proc": "2023/0199(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0199(COD)",
     "appliesFrom": null,
@@ -238,6 +268,7 @@
     "slug": "frequency-bands-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 87/372/EEC",
@@ -257,6 +288,7 @@
     "slug": "radio-spectrum-decision",
     "type": "D",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Decision (EC) No 676/2002",
@@ -276,6 +308,7 @@
     "slug": "broadband-cost-reduction-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2014/61/EU",
@@ -295,6 +328,7 @@
     "slug": "open-internet-access-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2015/2120",
@@ -314,6 +348,7 @@
     "slug": "eecc",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2018/1972",
@@ -333,6 +368,7 @@
     "slug": "roaming-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/612",
@@ -352,6 +388,7 @@
     "slug": "regulation-on-the-union-secure-connectivity-programme",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2023/588",
@@ -371,6 +408,7 @@
     "slug": "eu-top-level-domain-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2019/517",
@@ -390,6 +428,7 @@
     "slug": "rspp-2-0",
     "type": "R",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -403,6 +442,7 @@
     "slug": "telecoms-act-fair-share-initiative",
     "type": "R",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -423,6 +463,7 @@
     "slug": "gdpr",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2016/679",
@@ -528,6 +569,7 @@
     "slug": "regulation-on-the-protection-of-personal-data-processed-by-eu-institutions-bodies-offices-and-agencies",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2018/1725",
@@ -547,6 +589,7 @@
     "slug": "regulation-on-the-free-flow-of-non-personal-data",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2018/1807",
@@ -566,6 +609,7 @@
     "slug": "psi",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2019/1024",
@@ -585,6 +629,7 @@
     "slug": "dga",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/868",
@@ -603,7 +648,8 @@
     "name": "ePrivacy Regulation",
     "slug": "eprivacy-regulation",
     "type": "R",
-    "status": "neg",
+    "status": "withdrawn",
+    "statusNote": "Forslaget trukket tilbage af Kommissionen 6. oktober 2025.",
     "refs": [],
     "proc": "2017/0003(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2017/0003(COD)",
@@ -616,8 +662,15 @@
     "name": "European Data Act",
     "slug": "european-data-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/2854",
+      "celex": "32023R2854",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R2854"
+     }
+    ],
     "proc": "2022/0047(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0047(COD)",
     "appliesFrom": null,
@@ -629,8 +682,15 @@
     "name": "European Health Data Space",
     "slug": "european-health-data-space",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2025/327",
+      "celex": "32025R0327",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32025R0327"
+     }
+    ],
     "proc": "2022/0140(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0140(COD)",
     "appliesFrom": null,
@@ -642,8 +702,15 @@
     "name": "Regulation on data collection and sharing for short-term rental",
     "slug": "regulation-on-data-collection-and-sharing-for-short-term-rental",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/1028",
+      "celex": "32024R1028",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R1028"
+     }
+    ],
     "proc": "2022/0358(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0358(COD)",
     "appliesFrom": null,
@@ -655,8 +722,15 @@
     "name": "Harmonisation of GDPR enforcement",
     "slug": "harmonisation-of-gdpr-enforcement",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2025/2518",
+      "celex": "32025R2518",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32025R2518"
+     }
+    ],
     "proc": "2023/0202(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0202(COD)",
     "appliesFrom": null,
@@ -668,8 +742,15 @@
     "name": "Interoperable Europe Act",
     "slug": "interoperable-europe-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/903",
+      "celex": "32024R0903",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R0903"
+     }
+    ],
     "proc": "2022/0379(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0379(COD)",
     "appliesFrom": null,
@@ -682,6 +763,7 @@
     "slug": "access-to-vehicle-data-functions-and-resources",
     "type": "R",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -695,6 +777,7 @@
     "slug": "greendata4all",
     "type": "R",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -715,6 +798,7 @@
     "slug": "database-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 96/9/EC",
@@ -734,6 +818,7 @@
     "slug": "community-design-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EC) No 6/2002",
@@ -753,6 +838,7 @@
     "slug": "ipr",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2004/48/EC",
@@ -772,6 +858,7 @@
     "slug": "directive-on-the-protection-of-trade-secrets",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2016/943",
@@ -790,7 +877,8 @@
     "name": "Standard essential patents",
     "slug": "standard-essential-patents",
     "type": "R",
-    "status": "neg",
+    "status": "withdrawn",
+    "statusNote": "Forslaget trukket tilbage af Kommissionen i oktober 2025. Europa-Parlamentet har indbragt tilbagetrækningen for EU-Domstolen, så sagen er ikke endeligt afsluttet.",
     "refs": [],
     "proc": "2023/0133(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0133(COD)",
@@ -803,8 +891,15 @@
     "name": "Design Directive",
     "slug": "design-directive",
     "type": "L",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Directive (EU) 2024/2823",
+      "celex": "32024L2823",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024L2823"
+     }
+    ],
     "proc": "2022/0392(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0392(COD)",
     "appliesFrom": null,
@@ -816,8 +911,15 @@
     "name": "Compulsory licensing of patents",
     "slug": "compulsory-licensing-of-patents",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2025/2645",
+      "celex": "32025R2645",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32025R2645"
+     }
+    ],
     "proc": "2023/0129(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0129(COD)",
     "appliesFrom": null,
@@ -837,6 +939,7 @@
     "slug": "cybersecurity-act",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2019/881",
@@ -856,6 +959,7 @@
     "slug": "regulation-establishing-the-european-cybersecurity-competence-centre",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/887",
@@ -875,6 +979,7 @@
     "slug": "nis-2-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2022/2555",
@@ -894,6 +999,7 @@
     "slug": "information-security-regulation",
     "type": "R",
     "status": "neg",
+    "statusNote": null,
     "refs": [],
     "proc": "2022/0084(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0084(COD)",
@@ -906,8 +1012,15 @@
     "name": "Cybersecurity Regulation",
     "slug": "cybersecurity-regulation",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/2841",
+      "celex": "32023R2841",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R2841"
+     }
+    ],
     "proc": "2022/0085(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0085(COD)",
     "appliesFrom": null,
@@ -919,8 +1032,15 @@
     "name": "Cyber Resilience Act",
     "slug": "cyber-resilience-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/2847",
+      "celex": "32024R2847",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R2847"
+     }
+    ],
     "proc": "2022/0272(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0272(COD)",
     "appliesFrom": null,
@@ -932,8 +1052,15 @@
     "name": "Cyber Solidarity Act",
     "slug": "cyber-solidarity-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2025/38",
+      "celex": "32025R0038",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32025R0038"
+     }
+    ],
     "proc": "2023/0109(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0109(COD)",
     "appliesFrom": null,
@@ -953,6 +1080,7 @@
     "slug": "law-enforcement-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2016/680",
@@ -972,6 +1100,7 @@
     "slug": "directive-on-combating-fraud-and-counterfeiting-of-non-cash-means-of-payment",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2019/713",
@@ -991,6 +1120,7 @@
     "slug": "regulation-on-addressing-the-dissemination-of-terrorist-content-online",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/784",
@@ -1010,6 +1140,7 @@
     "slug": "temporary-csam-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2021/1232",
@@ -1028,8 +1159,15 @@
     "name": "E-evidence Regulation",
     "slug": "e-evidence-regulation",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2023/1543",
+      "celex": "32023R1543",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32023R1543"
+     }
+    ],
     "proc": "2018/0108(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2018/0108(COD)",
     "appliesFrom": null,
@@ -1041,10 +1179,11 @@
     "name": "Digitalisation of travel documents",
     "slug": "digitalisation-of-travel-documents",
     "type": "R",
-    "status": "plan",
+    "status": "neg",
+    "statusNote": null,
     "refs": [],
-    "proc": null,
-    "procUrl": null,
+    "proc": "2024/0670(COD)",
+    "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2024/0670(COD)",
     "appliesFrom": null,
     "appliesNote": null,
     "summary": null,
@@ -1062,6 +1201,7 @@
     "slug": "pld",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 85/374/EEC",
@@ -1081,6 +1221,7 @@
     "slug": "european-standardisation-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) No 1025/2012",
@@ -1100,6 +1241,7 @@
     "slug": "red",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2014/53/EU",
@@ -1119,6 +1261,7 @@
     "slug": "eidas-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) No 910/2014",
@@ -1138,6 +1281,7 @@
     "slug": "regulation-establishing-a-single-digital-gateway",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2018/1724",
@@ -1157,6 +1301,7 @@
     "slug": "general-product-safety-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2023/988",
@@ -1176,6 +1321,7 @@
     "slug": "machinery-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2023/1230",
@@ -1195,6 +1341,7 @@
     "slug": "ai-act",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2024/1689",
@@ -1331,8 +1478,15 @@
     "name": "Eco-design Regulation",
     "slug": "eco-design-regulation",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/1781",
+      "celex": "32024R1781",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R1781"
+     }
+    ],
     "proc": "2022/0095(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0095(COD)",
     "appliesFrom": null,
@@ -1344,7 +1498,8 @@
     "name": "AI Liability Directive",
     "slug": "ai-liability-directive",
     "type": "L",
-    "status": "neg",
+    "status": "withdrawn",
+    "statusNote": "Forslaget trukket tilbage af Kommissionen 6. oktober 2025.",
     "refs": [],
     "proc": "2022/0303(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0303(COD)",
@@ -1365,6 +1520,7 @@
     "slug": "uctd",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 93/13/EEC",
@@ -1384,6 +1540,7 @@
     "slug": "e-commerce-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2000/31/EC",
@@ -1403,6 +1560,7 @@
     "slug": "ucpd",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2005/29/EC",
@@ -1422,6 +1580,7 @@
     "slug": "crd",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2011/83/EU",
@@ -1441,6 +1600,7 @@
     "slug": "e-invoicing-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2014/55/EU",
@@ -1460,6 +1620,7 @@
     "slug": "geo-blocking-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2018/302",
@@ -1479,6 +1640,7 @@
     "slug": "digital-content-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2019/770",
@@ -1498,6 +1660,7 @@
     "slug": "directive-on-certain-aspects-concerning-contracts-for-the-sale-of-goods",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2019/771",
@@ -1517,6 +1680,7 @@
     "slug": "dsa",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/2065",
@@ -1535,8 +1699,15 @@
     "name": "Political Advertising Regulation",
     "slug": "political-advertising-regulation",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/900",
+      "celex": "32024R0900",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R0900"
+     }
+    ],
     "proc": "2021/0381(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0381(COD)",
     "appliesFrom": null,
@@ -1548,8 +1719,15 @@
     "name": "Right to Repair Directive",
     "slug": "right-to-repair-directive",
     "type": "L",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Directive (EU) 2024/1799",
+      "celex": "32024L1799",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024L1799"
+     }
+    ],
     "proc": "2023/0083(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0083(COD)",
     "appliesFrom": null,
@@ -1562,6 +1740,7 @@
     "slug": "mdms",
     "type": "R",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -1575,6 +1754,7 @@
     "slug": "consumer-protection-strengthened-enforcement-cooperation",
     "type": "R",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -1588,6 +1768,7 @@
     "slug": "consumer-rights-adapting-adr-to-digital-markets",
     "type": "L",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
@@ -1608,6 +1789,7 @@
     "slug": "technology-transfer-block-exemption-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) No 316/2014",
@@ -1627,6 +1809,7 @@
     "slug": "company-law-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2017/1132",
@@ -1646,6 +1829,7 @@
     "slug": "market-surveillance-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2019/1020",
@@ -1665,6 +1849,7 @@
     "slug": "p2b",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2019/1150",
@@ -1684,6 +1869,7 @@
     "slug": "vber",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/720",
@@ -1703,6 +1889,7 @@
     "slug": "dma",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/1925",
@@ -1722,6 +1909,7 @@
     "slug": "regulation-on-foreign-subsidies-distorting-the-internal-market",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/2560",
@@ -1741,6 +1929,7 @@
     "slug": "hber",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2023/1066",
@@ -1764,8 +1953,15 @@
     "name": "Platform Work Directive",
     "slug": "platform-work-directive",
     "type": "L",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Directive (EU) 2024/2831",
+      "celex": "32024L2831",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024L2831"
+     }
+    ],
     "proc": "2021/0414(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0414(COD)",
     "appliesFrom": null,
@@ -1777,8 +1973,15 @@
     "name": "Single Market Emergency Instrument (SMEI)",
     "slug": "smei",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/2747",
+      "celex": "32024R2747",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R2747"
+     }
+    ],
     "proc": "2022/0278(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0278(COD)",
     "appliesFrom": null,
@@ -1798,6 +2001,7 @@
     "slug": "satellite-and-cable-i-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 93/83/EEC",
@@ -1817,6 +2021,7 @@
     "slug": "infosoc",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2001/29/EC",
@@ -1836,6 +2041,7 @@
     "slug": "avmsd",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2010/13/EU",
@@ -1855,6 +2061,7 @@
     "slug": "portability-regulation",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2017/1128",
@@ -1874,6 +2081,7 @@
     "slug": "satellite-and-cable-ii-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2019/789",
@@ -1893,6 +2101,7 @@
     "slug": "dsm",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2019/790",
@@ -1911,8 +2120,15 @@
     "name": "European Media Freedom Act",
     "slug": "european-media-freedom-act",
     "type": "R",
-    "status": "neg",
-    "refs": [],
+    "status": "law",
+    "statusNote": null,
+    "refs": [
+     {
+      "label": "Regulation (EU) 2024/1083",
+      "celex": "32024R1083",
+      "url": "https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX:32024R1083"
+     }
+    ],
     "proc": "2022/0277(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0277(COD)",
     "appliesFrom": null,
@@ -1932,6 +2148,7 @@
     "slug": "common-vat-system-directive",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive 2006/112/EC",
@@ -1951,6 +2168,7 @@
     "slug": "psd2",
     "type": "L",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Directive (EU) 2015/2366",
@@ -1970,6 +2188,7 @@
     "slug": "dora",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2022/2554",
@@ -1989,6 +2208,7 @@
     "slug": "mica",
     "type": "R",
     "status": "law",
+    "statusNote": null,
     "refs": [
      {
       "label": "Regulation (EU) 2023/1114",
@@ -2008,6 +2228,7 @@
     "slug": "fida",
     "type": "R",
     "status": "neg",
+    "statusNote": null,
     "refs": [],
     "proc": "2023/0205(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0205(COD)",
@@ -2021,6 +2242,7 @@
     "slug": "digital-euro-regulation",
     "type": "R",
     "status": "neg",
+    "statusNote": null,
     "refs": [],
     "proc": "2023/0212(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0212(COD)",
@@ -2034,6 +2256,7 @@
     "slug": "payment-services-regulation",
     "type": "R",
     "status": "neg",
+    "statusNote": null,
     "refs": [],
     "proc": "2023/0210(COD)",
     "procUrl": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0210(COD)",
@@ -2047,6 +2270,7 @@
     "slug": "revision-of-the-late-payments-directive",
     "type": "L",
     "status": "plan",
+    "statusNote": null,
     "refs": [],
     "proc": null,
     "procUrl": null,
